@@ -8,6 +8,7 @@ DISABLE_STARTUP_KEYWORDS = ("wechat", "weixin", "qq", "baidu", "onedrive", "spot
 
 def build_product_insights(report: dict) -> dict:
     return {
+        "overview_questions": build_overview_questions(report),
         "problem_cards": build_problem_cards(report),
         "space_sections": build_space_sections(report),
         "process_summary": build_process_summary(report),
@@ -17,6 +18,115 @@ def build_product_insights(report: dict) -> dict:
         "optimization_tasks": build_optimization_tasks(report),
         "plain_summary": build_plain_summary(report),
     }
+
+
+def build_overview_questions(report: dict) -> list[dict]:
+    c_drive = _c_drive(report)
+    mem = report.get("hardware", {}).get("memory", {})
+    cpu = report.get("hardware", {}).get("cpu", {})
+    process_summary = build_process_summary(report)
+    startup_summary = build_startup_summary(report)
+    software_fit = build_software_fit(report)
+    cleanable = _cleanable_total(report)
+    clutter = _user_clutter_total(report)
+
+    c_free = c_drive.get("free_gb", 0) if c_drive else 0
+    c_usage = c_drive.get("usage_percent", 0) if c_drive else 0
+    space_score = 92
+    if c_free < 10:
+        space_score -= 45
+    elif c_free < 30:
+        space_score -= 28
+    elif c_free < 60:
+        space_score -= 12
+    if c_usage > 90:
+        space_score -= 18
+    if cleanable > 20:
+        space_score -= 8
+    if clutter > 100:
+        space_score -= 10
+    space_score = _clamp_score(space_score)
+    space_status = _score_label(space_score, "空间")
+    if c_drive:
+        if space_score >= 75:
+            space_summary = f"C 盘剩余 {c_free}GB，空间不是当前卡顿主要原因。"
+        elif space_score >= 60:
+            space_summary = f"C 盘剩余 {c_free}GB，缓存和用户文件建议整理。"
+        else:
+            space_summary = f"C 盘只剩 {c_free}GB，建议优先清理和转移文件。"
+    else:
+        space_summary = "暂未识别 C 盘空间，建议重新体检。"
+
+    hardware_score = 88
+    if cpu.get("logical_cores", 0) < 4:
+        hardware_score -= 30
+    elif cpu.get("logical_cores", 0) < 8:
+        hardware_score -= 10
+    if mem.get("total_gb", 0) < 8:
+        hardware_score -= 35
+    elif mem.get("total_gb", 0) < 16:
+        hardware_score -= 18
+    if mem.get("usage_percent", 0) > 85:
+        hardware_score -= 14
+    if c_free and c_free < 30:
+        hardware_score -= 8
+    hardware_score = _clamp_score(hardware_score)
+    hardware_summary = _hardware_summary(cpu, mem, c_drive, hardware_score)
+
+    attention_count = sum(1 for item in software_fit if item.get("level") in {"medium", "unknown"})
+    software_score = _clamp_score(88 - attention_count * 8 - (10 if mem.get("usage_percent", 0) > 80 else 0))
+    software_summary = "常用办公、浏览器和开发工具基本能跑。" if software_score >= 75 else "常用软件能运行，但多开大软件时会吃紧。"
+
+    system_score = 92
+    system_score -= min(25, startup_summary.get("disable_count", 0) * 3)
+    system_score -= min(20, startup_summary.get("suspicious_count", 0) * 8)
+    system_score -= min(18, process_summary.get("high_cpu_count", 0) * 6 + process_summary.get("high_memory_count", 0) * 4)
+    system_score -= min(12, process_summary.get("background_count", 0))
+    system_score = _clamp_score(system_score)
+    system_summary = (
+        "后台和启动项比较干净。"
+        if system_score >= 75
+        else f"检测到 {startup_summary.get('total_count', 0)} 个启动项，建议关闭 {startup_summary.get('disable_count', 0)} 个。"
+    )
+
+    return [
+        {
+            "key": "space",
+            "title": "空间够不够？",
+            "score": space_score,
+            "status": space_status,
+            "summary": space_summary,
+            "button": "查看空间占用",
+            "page_index": 1,
+        },
+        {
+            "key": "hardware",
+            "title": "硬件落后吗？",
+            "score": hardware_score,
+            "status": _score_label(hardware_score, "硬件"),
+            "summary": hardware_summary,
+            "button": "查看硬件短板",
+            "page_index": 2,
+        },
+        {
+            "key": "software",
+            "title": "软件跑得动吗？",
+            "score": software_score,
+            "status": _score_label(software_score, "软件"),
+            "summary": software_summary,
+            "button": "查看软件适配",
+            "page_index": 3,
+        },
+        {
+            "key": "system",
+            "title": "系统拖慢了吗？",
+            "score": system_score,
+            "status": _score_label(system_score, "系统"),
+            "summary": system_summary,
+            "button": "查看后台和启动项",
+            "page_index": 4,
+        },
+    ]
 
 
 def build_problem_cards(report: dict) -> list[dict]:
@@ -445,3 +555,34 @@ def _space_explain(name: str) -> str:
     if name == "Recycle Bin":
         return "回收站里的文件仍然占用空间，清空前需要确认不再需要。"
     return "建议确认内容后再处理。"
+
+
+def _clamp_score(score: int | float) -> int:
+    return max(0, min(100, int(round(score))))
+
+
+def _score_label(score: int, topic: str) -> str:
+    if score >= 90:
+        return "很健康"
+    if score >= 75:
+        return "良好"
+    if score >= 60:
+        return "有点累"
+    if score >= 40:
+        return "需要整理"
+    if topic == "空间":
+        return "空间危险"
+    return "需要尽快处理"
+
+
+def _hardware_summary(cpu: dict, mem: dict, c_drive: dict | None, score: int) -> str:
+    cpu_threads = cpu.get("logical_cores", 0)
+    mem_total = mem.get("total_gb", 0)
+    c_free = c_drive.get("free_gb", 0) if c_drive else 0
+    if score >= 75:
+        return f"{cpu_threads} 线程 CPU、{mem_total}GB 内存，日常使用基本够用。"
+    if mem_total < 16:
+        return f"内存 {mem_total}GB 偏紧，多开浏览器、设计或开发工具会有压力。"
+    if c_free and c_free < 30:
+        return "硬件基本够用，但 C 盘空间会影响软件缓存。"
+    return "部分硬件指标偏弱，建议结合常用软件再判断升级。"

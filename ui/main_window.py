@@ -6,11 +6,12 @@ from qt_bootstrap import configure_qt
 configure_qt()
 
 from PyQt5.QtCore import QPoint, QThread, Qt, pyqtSignal
-from PyQt5.QtGui import QColor
+from PyQt5.QtGui import QColor, QPixmap
 from PyQt5.QtWidgets import (
     QApplication,
     QFrame,
     QGraphicsDropShadowEffect,
+    QGraphicsOpacityEffect,
     QGridLayout,
     QHBoxLayout,
     QHeaderView,
@@ -135,6 +136,78 @@ class StatCard(QFrame):
         self.note.setText(note)
 
 
+class EmotionBadge(QFrame):
+    def __init__(self, label: str, image_path: str, tip: str):
+        super().__init__()
+        self.setObjectName("emotionBadge")
+        self.image_path = image_path
+        self.opacity = QGraphicsOpacityEffect(self)
+        self.setGraphicsEffect(self.opacity)
+        self.setToolTip(tip)
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setSpacing(4)
+        self.image = QLabel()
+        self.image.setObjectName("emotionImage")
+        self.image.setFixedSize(74, 74)
+        self.image.setScaledContents(False)
+        pixmap = QPixmap(image_path)
+        if not pixmap.isNull():
+            self.image.setPixmap(pixmap.scaled(74, 74, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        self.label = QLabel(label)
+        self.label.setObjectName("emotionLabel")
+        self.label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(self.image, 0, Qt.AlignCenter)
+        layout.addWidget(self.label)
+        self.set_active(False)
+
+    def set_active(self, active: bool):
+        self.setProperty("active", active)
+        self.opacity.setOpacity(1.0 if active else 0.36)
+        self.style().unpolish(self)
+        self.style().polish(self)
+
+
+class QuestionCard(QFrame):
+    detail_requested = pyqtSignal(int)
+
+    def __init__(self, title: str):
+        super().__init__()
+        self.setObjectName("questionCard")
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(18, 16, 18, 16)
+        layout.setSpacing(8)
+
+        self.title = QLabel(title)
+        self.title.setObjectName("questionTitle")
+        self.score = QLabel("-- 分")
+        self.score.setObjectName("questionScore")
+        self.status = QLabel("状态：等待检测")
+        self.status.setObjectName("questionStatus")
+        self.summary = QLabel("体检后会给出一句话结论。")
+        self.summary.setObjectName("questionSummary")
+        self.summary.setWordWrap(True)
+        self.button = QPushButton("查看详情")
+        self.button.setObjectName("linkButton")
+        self.button.clicked.connect(lambda: self.detail_requested.emit(getattr(self, "page_index", 0)))
+
+        layout.addWidget(self.title)
+        layout.addWidget(self.score)
+        layout.addWidget(self.status)
+        layout.addWidget(self.summary, 1)
+        layout.addWidget(self.button, 0, Qt.AlignLeft)
+        self.page_index = 0
+
+    def set_data(self, data: dict):
+        self.page_index = data.get("page_index", 0)
+        self.title.setText(data.get("title", self.title.text()))
+        self.score.setText(f"{data.get('score', '--')} 分")
+        self.status.setText(f"状态：{data.get('status', '等待检测')}")
+        self.summary.setText(data.get("summary", ""))
+        self.button.setText(data.get("button", "查看详情"))
+
+
 class MetricPanel(QFrame):
     def __init__(self, title: str):
         super().__init__()
@@ -189,7 +262,7 @@ class MainWindow(QMainWindow):
         self.menu = QListWidget()
         self.menu.setObjectName("sidebar")
         self.menu.setFixedWidth(220)
-        for text in ["电脑现在怎么样", "空间都被谁占了", "谁在偷偷运行", "硬件哪里不够", "该怎么处理"]:
+        for text in ["电脑总览", "空间分析", "硬件短板", "软件适配", "系统拖慢"]:
             QListWidgetItem(text, self.menu)
         body_layout.addWidget(self.menu)
 
@@ -198,17 +271,17 @@ class MainWindow(QMainWindow):
         body_layout.addWidget(self.stack, 1)
 
         self.home_page = self._build_home_page()
-        self.disk_page, self.disk_table = self._build_table_page("空间都被谁占了", "C 盘、缓存、回收站、桌面和下载目录会在这里解释清楚")
-        self.process_page, self.process_table = self._build_table_page("谁在偷偷运行", "正在运行的软件和开机自启动项会合并展示")
-        self.hardware_page, self.hardware_table = self._build_table_page("硬件哪里不够", "判断 CPU、内存、硬盘和常用软件是否够用")
-        self.ai_page = self._build_ai_page()
+        self.disk_page, self.disk_table = self._build_table_page("空间分析", "空间够不够，谁占了空间，哪些内容可以放心处理。")
+        self.hardware_page, self.hardware_table = self._build_table_page("硬件短板", "CPU、内存、硬盘和显卡当前处在什么水平。")
+        self.software_page, self.software_table = self._build_table_page("软件适配", "Photoshop、Chrome、PyCharm、3D 和 AI 场景能不能跑得动。")
+        self.system_page, self.system_table = self._build_table_page("系统拖慢", "自启动、后台常驻和可疑软件是否正在拖慢电脑。")
 
         for page in [
             self.home_page,
             self.disk_page,
-            self.process_page,
             self.hardware_page,
-            self.ai_page,
+            self.software_page,
+            self.system_page,
         ]:
             self.stack.addWidget(page)
 
@@ -280,16 +353,20 @@ class MainWindow(QMainWindow):
         action_row.setSpacing(10)
         clean_btn = QPushButton("立即安全清理")
         startup_btn = QPushButton("优化启动项")
-        report_btn = QPushButton("生成 AI 报告")
+        export_btn = QPushButton("导出 JSON")
+        report_btn = QPushButton("复制 AI 模板")
         clean_btn.setObjectName("secondaryAction")
         startup_btn.setObjectName("secondaryAction")
+        export_btn.setObjectName("secondaryAction")
         report_btn.setObjectName("secondaryAction")
         clean_btn.clicked.connect(lambda: self.menu.setCurrentRow(1))
-        startup_btn.clicked.connect(lambda: self.menu.setCurrentRow(2))
-        report_btn.clicked.connect(lambda: self.menu.setCurrentRow(4))
+        startup_btn.clicked.connect(lambda: self.menu.setCurrentRow(4))
+        export_btn.clicked.connect(self.on_export_json)
+        report_btn.clicked.connect(self.on_copy_prompt)
         action_row.addWidget(self.scan_btn)
         action_row.addWidget(clean_btn)
         action_row.addWidget(startup_btn)
+        action_row.addWidget(export_btn)
         action_row.addWidget(report_btn)
         action_row.addStretch(1)
         left.addWidget(self.status_kicker)
@@ -304,36 +381,50 @@ class MainWindow(QMainWindow):
         score_layout.setContentsMargins(22, 20, 22, 20)
         self.score_label = QLabel("--")
         self.score_label.setObjectName("score")
-        self.score_note = QLabel("健康分")
+        self.score_note = QLabel("综合评分")
         self.score_note.setObjectName("scoreNote")
+        self.score_status = QLabel("综合状态：等待体检")
+        self.score_status.setObjectName("scoreStatus")
         self.score_bar = QProgressBar()
         self.score_bar.setObjectName("scoreBar")
         self.score_bar.setRange(0, 100)
         self.score_bar.setValue(0)
         self.optimization_label = QLabel("优化空间：--")
         self.optimization_label.setObjectName("scoreSub")
+        emotion_row = QHBoxLayout()
+        emotion_row.setSpacing(6)
+        self.emotion_badges = [
+            EmotionBadge("开心", "assets/ip/90-100.png", "90-100 分：电脑状态很好，保持即可"),
+            EmotionBadge("微笑", "assets/ip/70-90.png", "75-89 分：基本没问题，有少量可优化"),
+            EmotionBadge("有点累", "assets/ip/60-70.png", "60-74 分：后台、空间或缓存已有压力"),
+            EmotionBadge("难受", "assets/ip/30-60.png", "40-59 分：多项问题叠加，需要处理"),
+            EmotionBadge("发烧", "assets/ip/0-30.png", "0-39 分：可能存在严重空间、硬件或系统风险"),
+        ]
+        for badge in self.emotion_badges:
+            emotion_row.addWidget(badge)
         score_layout.addWidget(self.score_note)
         score_layout.addWidget(self.score_label)
+        score_layout.addWidget(self.score_status)
         score_layout.addWidget(self.score_bar)
         score_layout.addWidget(self.optimization_label)
+        score_layout.addLayout(emotion_row)
 
         hero_layout.addLayout(left, 1)
         hero_layout.addWidget(score_panel)
         v.addWidget(hero)
 
-        cards = QGridLayout()
-        cards.setSpacing(12)
-        self.cpu_card = StatCard("CPU", "--", "等待检测")
-        self.mem_card = StatCard("内存", "--", "等待检测")
-        self.disk_card = StatCard("磁盘 C:", "--", "等待检测")
-        self.process_card = StatCard("后台软件", "--", "等待检测")
-        self.startup_card = StatCard("自启动", "--", "等待检测")
-        self.clean_card = StatCard("可清理空间", "--", "等待检测")
-        for index, card in enumerate(
-            [self.cpu_card, self.mem_card, self.disk_card, self.process_card, self.startup_card, self.clean_card]
-        ):
-            cards.addWidget(card, index // 3, index % 3)
-        v.addLayout(cards)
+        question_grid = QGridLayout()
+        question_grid.setSpacing(12)
+        self.question_cards = {
+            "space": QuestionCard("空间够不够？"),
+            "hardware": QuestionCard("硬件落后吗？"),
+            "software": QuestionCard("软件跑得动吗？"),
+            "system": QuestionCard("系统拖慢了吗？"),
+        }
+        for index, card in enumerate(self.question_cards.values()):
+            card.detail_requested.connect(self.menu.setCurrentRow)
+            question_grid.addWidget(card, 0, index)
+        v.addLayout(question_grid)
 
         bottom = QGridLayout()
         bottom.setSpacing(12)
@@ -344,6 +435,20 @@ class MainWindow(QMainWindow):
         bottom.addWidget(issues_panel, 0, 0)
         bottom.addWidget(progress_panel, 0, 1)
         v.addLayout(bottom, 1)
+
+        hardware_grid = QGridLayout()
+        hardware_grid.setSpacing(12)
+        self.cpu_card = StatCard("CPU", "--", "等待检测")
+        self.mem_card = StatCard("内存", "--", "等待检测")
+        self.disk_card = StatCard("磁盘 C:", "--", "等待检测")
+        self.process_card = StatCard("后台软件", "--", "等待检测")
+        self.startup_card = StatCard("自启动", "--", "等待检测")
+        self.clean_card = StatCard("可清理空间", "--", "等待检测")
+        for index, card in enumerate(
+            [self.cpu_card, self.mem_card, self.disk_card, self.process_card, self.startup_card, self.clean_card]
+        ):
+            hardware_grid.addWidget(card, 0, index)
+        v.addLayout(hardware_grid)
         return page
 
     def _make_text_panel(self, attr_name: str, placeholder: str):
@@ -484,11 +589,14 @@ class MainWindow(QMainWindow):
         high_count = len(processes.get("high_cpu_processes", [])) + len(processes.get("high_memory_processes", []))
         cleanable_size = sum(i.get("size_gb", 0) for i in report.get("cleanable_items", []))
         startup_count = report.get("startup_items", {}).get("total_count", 0)
-        health_score = score.get("health_score", score.get("total_score", 0))
+        display_score = score.get("total_score", score.get("health_score", 0))
         optimization_score = score.get("optimization_score", 0)
 
-        self.score_label.setText(str(health_score))
-        self.score_bar.setValue(int(health_score))
+        self.score_label.setText(str(display_score))
+        self.score_bar.setValue(int(display_score))
+        self.score_status.setText(f"综合状态：{score.get('display_level', ip.get('display_name', '已体检'))}")
+        for index, badge in enumerate(self.emotion_badges):
+            badge.set_active(index == self._emotion_index(display_score))
         self.optimization_label.setText(f"优化空间：{optimization_score}/100")
         self.status_kicker.setText("SCAN COMPLETE")
         self.status_title.setText(f"你的电脑现在{ip.get('display_name', '已体检')}")
@@ -500,6 +608,11 @@ class MainWindow(QMainWindow):
         self.process_card.set_data(str(high_count), "高占用后台程序")
         self.startup_card.set_data(str(startup_count), "开机自动启动")
         self.clean_card.set_data(f"{round(cleanable_size, 1)} GB", "安全可清理项")
+
+        for item in product.get("overview_questions", []):
+            card = self.question_cards.get(item.get("key"))
+            if card:
+                card.set_data(item)
 
         problem_cards = product.get("problem_cards", [])
         if problem_cards:
@@ -515,9 +628,20 @@ class MainWindow(QMainWindow):
             self.issue_view.setPlainText("暂未发现明显问题。")
 
         self._fill_table(self.disk_table, ["分类", "名称", "大小/容量", "说明", "建议操作"], self._space_rows(report))
-        self._fill_table(self.process_table, ["类型", "名称", "CPU/内存", "说明", "建议"], self._background_rows(report))
         self._fill_table(self.hardware_table, ["模块", "状态", "影响", "建议"], self._hardware_bottleneck_rows(report))
-        self._fill_table(self.task_table, ["分级", "任务", "风险", "预期收益", "按钮"], self._task_rows(report))
+        self._fill_table(self.software_table, ["软件/场景", "状态", "瓶颈", "建议"], self._software_fit_rows(report))
+        self._fill_table(self.system_table, ["类型", "名称", "CPU/内存", "说明", "建议"], self._background_rows(report))
+
+    def _emotion_index(self, score: int) -> int:
+        if score >= 90:
+            return 0
+        if score >= 75:
+            return 1
+        if score >= 60:
+            return 2
+        if score >= 40:
+            return 3
+        return 4
 
     def _space_rows(self, report: dict):
         rows = []
@@ -583,9 +707,13 @@ class MainWindow(QMainWindow):
         rows = []
         for item in report.get("product", {}).get("hardware_bottlenecks", []):
             rows.append([item.get("name", ""), item.get("status", ""), item.get("impact", ""), item.get("suggestion", "")])
+        return rows
+
+    def _software_fit_rows(self, report: dict):
+        rows = []
         for item in report.get("product", {}).get("software_fit", []):
             rows.append([
-                f"软件适配：{item.get('name', '')}",
+                item.get("name", ""),
                 item.get("summary", ""),
                 item.get("bottleneck", ""),
                 item.get("suggestion", ""),
@@ -796,7 +924,7 @@ QFrame#scorePanel {
     background: #0f0f14;
     border: 1px solid #2a2a31;
     border-radius: 20px;
-    min-width: 210px;
+    min-width: 540px;
 }
 QLabel#score {
     color: #ffffff;
@@ -806,6 +934,25 @@ QLabel#score {
 QLabel#scoreNote {
     color: #9b9ba3;
     font-size: 13px;
+}
+QLabel#scoreStatus, QLabel#scoreSub {
+    color: #d7d7dd;
+    font-size: 13px;
+    font-weight: 650;
+}
+QFrame#emotionBadge {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 14px;
+}
+QFrame#emotionBadge[active="true"] {
+    background: #191920;
+    border: 1px solid #37d6e8;
+}
+QLabel#emotionLabel {
+    color: #d7d7dd;
+    font-size: 12px;
+    font-weight: 700;
 }
 QProgressBar#scoreBar {
     background: #222228;
@@ -822,9 +969,38 @@ QFrame#statCard, QFrame#panel, QTextEdit#panelTextLarge, QTableWidget#dataTable 
     border: 1px solid #25252c;
     border-radius: 18px;
 }
+QFrame#questionCard {
+    background: #101014;
+    border: 1px solid #2a2a31;
+    border-radius: 18px;
+    min-height: 154px;
+}
+QFrame#questionCard:hover {
+    border: 1px solid #37d6e8;
+    background: #131318;
+}
 QFrame#statCard:hover {
     border: 1px solid #3a3a44;
     background: #131318;
+}
+QLabel#questionTitle {
+    color: #f5f5f7;
+    font-size: 16px;
+    font-weight: 800;
+}
+QLabel#questionScore {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+}
+QLabel#questionStatus {
+    color: #37d6e8;
+    font-size: 13px;
+    font-weight: 750;
+}
+QLabel#questionSummary {
+    color: #a9a9b2;
+    font-size: 13px;
 }
 QLabel#cardTitle {
     color: #9b9ba3;
@@ -874,6 +1050,16 @@ QPushButton#secondaryAction {
 QPushButton#secondaryAction:hover {
     background: #24242b;
 }
+QPushButton#linkButton {
+    background: transparent;
+    color: #f5c94b;
+    border: none;
+    padding: 4px 0;
+    font-weight: 800;
+}
+QPushButton#linkButton:hover {
+    color: #ffe08a;
+}
 QPushButton:disabled {
     background: #1a1a1f;
     color: #77777f;
@@ -887,7 +1073,7 @@ QTextEdit#panelText, QTextEdit#panelTextLarge {
     selection-background-color: #3a3a42;
 }
 QTextEdit#panelText {
-    min-height: 190px;
+    min-height: 120px;
 }
 QTableWidget#dataTable {
     color: #f5f5f7;
