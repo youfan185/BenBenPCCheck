@@ -1,0 +1,616 @@
+{
+  "report_version": "1.0",
+  "software_name": "BenBen PC Check",
+  "software_version": "1.0.0",
+  "scan_time": "2026-05-09 03:07:48",
+  "computer": {
+    "computer_name": "WIN-20251204YBT",
+    "user_name": "WIN-20251204YBT",
+    "os_name": "Windows",
+    "os_version": "10.0.19045",
+    "system_type": "AMD64",
+    "hostname": "WIN-20251204YBT"
+  },
+  "hardware": {
+    "cpu": {
+      "name": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+      "physical_cores": 8,
+      "logical_cores": 16,
+      "current_usage_percent": 8.8
+    },
+    "memory": {
+      "total_gb": 39.9,
+      "used_gb": 20.7,
+      "available_gb": 19.2,
+      "usage_percent": 51.9
+    },
+    "gpu": [],
+    "disks": []
+  },
+  "disk_partitions": [
+    {
+      "drive": "C:",
+      "mountpoint": "C:\\",
+      "total_gb": 953.9,
+      "used_gb": 367.2,
+      "free_gb": 586.7,
+      "usage_percent": 38.5,
+      "risk_level": "good"
+    },
+    {
+      "drive": "E:",
+      "mountpoint": "E:\\",
+      "total_gb": 447.1,
+      "used_gb": 182.5,
+      "free_gb": 264.6,
+      "usage_percent": 40.8,
+      "risk_level": "good"
+    },
+    {
+      "drive": "F:",
+      "mountpoint": "F:\\",
+      "total_gb": 931.5,
+      "used_gb": 801.5,
+      "free_gb": 130.0,
+      "usage_percent": 86.0,
+      "risk_level": "good"
+    }
+  ],
+  "large_folders": [
+    {
+      "name": "Documents",
+      "path": "C:\\Users\\Administrator\\Documents",
+      "size_gb": 65.74,
+      "category": "documents",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Desktop",
+      "path": "C:\\Users\\Administrator\\Desktop",
+      "size_gb": 45.93,
+      "category": "desktop_files",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Downloads",
+      "path": "C:\\Users\\Administrator\\Downloads",
+      "size_gb": 29.9,
+      "category": "download_files",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Adobe Cache",
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Adobe",
+      "size_gb": 1.54,
+      "category": "adobe_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "User Temp",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+      "size_gb": 1.5,
+      "category": "temp",
+      "safe_to_clean": true,
+      "suggestion": "可安全清理"
+    },
+    {
+      "name": "Tencent Files",
+      "path": "C:\\Users\\Administrator\\Documents\\Tencent Files",
+      "size_gb": 0.62,
+      "category": "qq_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Chrome Cache",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+      "size_gb": 0.42,
+      "category": "browser_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    }
+  ],
+  "cleanable_items": [
+    {
+      "name": "Windows Temp",
+      "path": "C:\\Windows\\Temp",
+      "size_gb": 0.03,
+      "risk": "safe",
+      "default_selected": true
+    },
+    {
+      "name": "User Temp",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+      "size_gb": 1.5,
+      "risk": "safe",
+      "default_selected": true
+    },
+    {
+      "name": "Recycle Bin",
+      "path": "C:\\$Recycle.Bin",
+      "size_gb": 4.0,
+      "risk": "need_confirm",
+      "default_selected": false
+    }
+  ],
+  "process_list": [
+    {
+      "name": "explorer.exe",
+      "pid": 33068,
+      "cpu_percent": 0.0,
+      "memory_mb": 1522.4,
+      "path": "C:\\Windows\\explorer.exe"
+    },
+    {
+      "name": "pycharm64.exe",
+      "pid": 31700,
+      "cpu_percent": 0.0,
+      "memory_mb": 1423.2,
+      "path": "C:\\软件\\PyCharm 2025.3.1\\bin\\pycharm64.exe"
+    },
+    {
+      "name": "Weixin.exe",
+      "pid": 20884,
+      "cpu_percent": 0.0,
+      "memory_mb": 708.9,
+      "path": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe"
+    },
+    {
+      "name": "bambu-studio.exe",
+      "pid": 45460,
+      "cpu_percent": 0.0,
+      "memory_mb": 703.8,
+      "path": "C:\\软件\\拓竹\\Bambu Studio\\bambu-studio.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 29128,
+      "cpu_percent": 0.0,
+      "memory_mb": 664.7,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 44256,
+      "cpu_percent": 0.0,
+      "memory_mb": 656.5,
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 21892,
+      "cpu_percent": 0.0,
+      "memory_mb": 577.9,
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+      "name": "bambu-studio.exe",
+      "pid": 30392,
+      "cpu_percent": 0.0,
+      "memory_mb": 520.5,
+      "path": "C:\\软件\\拓竹\\Bambu Studio\\bambu-studio.exe"
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 1248,
+      "cpu_percent": 0.0,
+      "memory_mb": 466.8,
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+      "name": "wegame.exe",
+      "pid": 21004,
+      "cpu_percent": 0.0,
+      "memory_mb": 444.8,
+      "path": "C:\\游戏\\WeGame\\wegame.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 13400,
+      "cpu_percent": 0.0,
+      "memory_mb": 438.3,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 3820,
+      "cpu_percent": 0.0,
+      "memory_mb": 419.0,
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 38304,
+      "cpu_percent": 0.0,
+      "memory_mb": 354.1,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 10956,
+      "cpu_percent": 0.0,
+      "memory_mb": 352.5,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 19680,
+      "cpu_percent": 0.0,
+      "memory_mb": 342.1,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "QQ.exe",
+      "pid": 15840,
+      "cpu_percent": 0.0,
+      "memory_mb": 338.2,
+      "path": "C:\\软件\\QQ\\QQ.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 38428,
+      "cpu_percent": 0.0,
+      "memory_mb": 338.2,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 31508,
+      "cpu_percent": 0.0,
+      "memory_mb": 319.8,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    },
+    {
+      "name": "SodaMusic.exe",
+      "pid": 18296,
+      "cpu_percent": 0.0,
+      "memory_mb": 316.4,
+      "path": "C:\\软件\\汽水\\Soda Music\\3.1.2\\SodaMusic.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 34700,
+      "cpu_percent": 0.0,
+      "memory_mb": 297.2,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 28016,
+      "cpu_percent": 0.0,
+      "memory_mb": 280.2,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "dwm.exe",
+      "pid": 1840,
+      "cpu_percent": 0.0,
+      "memory_mb": 275.3,
+      "path": "C:\\Windows\\System32\\dwm.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 39356,
+      "cpu_percent": 0.0,
+      "memory_mb": 271.2,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 27640,
+      "cpu_percent": 0.0,
+      "memory_mb": 270.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "SearchApp.exe",
+      "pid": 6804,
+      "cpu_percent": 0.0,
+      "memory_mb": 270.5,
+      "path": "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe"
+    },
+    {
+      "name": "wetype_server.exe",
+      "pid": 4232,
+      "cpu_percent": 0.0,
+      "memory_mb": 269.8,
+      "path": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\wetype_server.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 8804,
+      "cpu_percent": 0.0,
+      "memory_mb": 266.9,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 36492,
+      "cpu_percent": 0.0,
+      "memory_mb": 266.4,
+      "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40748,
+      "cpu_percent": 0.0,
+      "memory_mb": 263.9,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 31404,
+      "cpu_percent": 0.0,
+      "memory_mb": 262.6,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 39756,
+      "cpu_percent": 0.0,
+      "memory_mb": 261.0,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40952,
+      "cpu_percent": 0.0,
+      "memory_mb": 256.4,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "Creative Cloud UI Helper.exe",
+      "pid": 22388,
+      "cpu_percent": 0.0,
+      "memory_mb": 255.5,
+      "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40524,
+      "cpu_percent": 0.0,
+      "memory_mb": 251.5,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 11244,
+      "cpu_percent": 0.0,
+      "memory_mb": 251.4,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "ToDesk.exe",
+      "pid": 4188,
+      "cpu_percent": 0.0,
+      "memory_mb": 244.6,
+      "path": "C:\\软件\\todesk\\ToDesk.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 25004,
+      "cpu_percent": 0.0,
+      "memory_mb": 242.9,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 31780,
+      "cpu_percent": 0.0,
+      "memory_mb": 240.0,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 1244,
+      "cpu_percent": 0.0,
+      "memory_mb": 233.8,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 31868,
+      "cpu_percent": 0.0,
+      "memory_mb": 232.0,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 6720,
+      "cpu_percent": 0.0,
+      "memory_mb": 230.1,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    },
+    {
+      "name": "Creative Cloud.exe",
+      "pid": 22568,
+      "cpu_percent": 0.0,
+      "memory_mb": 229.2,
+      "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 36416,
+      "cpu_percent": 0.0,
+      "memory_mb": 221.7,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 17984,
+      "cpu_percent": 0.0,
+      "memory_mb": 218.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40504,
+      "cpu_percent": 0.0,
+      "memory_mb": 215.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "Adobe Desktop Service.exe",
+      "pid": 22856,
+      "cpu_percent": 0.0,
+      "memory_mb": 214.7,
+      "path": "C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\ADS\\Adobe Desktop Service.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 37008,
+      "cpu_percent": 0.0,
+      "memory_mb": 213.0,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 29868,
+      "cpu_percent": 0.0,
+      "memory_mb": 212.8,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "ShellExperienceHost.exe",
+      "pid": 30588,
+      "cpu_percent": 0.0,
+      "memory_mb": 212.0,
+      "path": "C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 35624,
+      "cpu_percent": 0.0,
+      "memory_mb": 209.5,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    }
+  ],
+  "processes": {
+    "total_count": 50,
+    "high_cpu_processes": [],
+    "high_memory_processes": []
+  },
+  "startup_items": {
+    "total_count": 13,
+    "items": [
+      {
+        "name": "sdstj",
+        "path": "",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "stat",
+        "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "360huabao",
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "BaiduYunDetect",
+        "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "QQNT",
+        "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "BaiduYunGuanjia",
+        "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Weixin",
+        "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "CCXProcess",
+        "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "汽水音乐",
+        "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "EPLTarget\\P0000000000000000",
+        "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Spotify",
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+        "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+        "source": "HKLM Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "AdobeGCInvoker-1.0",
+        "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+        "source": "HKLM Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      }
+    ]
+  },
+  "score": {
+    "total_score": 54,
+    "level": "bad",
+    "sub_scores": {
+      "cpu_score": 15,
+      "memory_score": 12,
+      "disk_space_score": 1,
+      "process_score": 15,
+      "startup_score": 5,
+      "clean_score": 6
+    }
+  },
+  "ip_status": {
+    "name": "sick",
+    "display_name": "难受",
+    "emotion": "sick",
+    "image": "assets/ip/sick.png",
+    "message": "电脑状态较差，建议尽快处理。"
+  },
+  "diagnosis": {
+    "main_issues": [],
+    "local_summary": "系统整体可用。"
+  }
+}
