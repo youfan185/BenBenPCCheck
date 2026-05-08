@@ -35,6 +35,7 @@ from core.diagnosis_engine import build_diagnosis
 from core.disk_scanner import list_partitions, scan_common_folders
 from core.hardware_info import get_cpu_info, get_memory_info, get_system_info
 from core.process_monitor import high_usage_processes, top_processes
+from core.product_insights import build_product_insights
 from core.report_generator import export_json, export_txt
 from core.score_engine import calculate_score
 from core.startup_manager import get_startup_items
@@ -92,13 +93,17 @@ class ScanWorker(QThread):
             score_pack = calculate_score(report)
             report["score"] = {
                 "total_score": score_pack["total_score"],
+                "health_score": score_pack["health_score"],
+                "optimization_score": score_pack["optimization_score"],
                 "level": score_pack["level"],
+                "display_level": score_pack["display_level"],
                 "sub_scores": score_pack["sub_scores"],
             }
             report["ip_status"] = score_pack["ip_status"]
 
             self.progress.emit("应用本地诊断规则，整理主要问题和建议")
             report["diagnosis"] = build_diagnosis(report)
+            report["product"] = build_product_insights(report)
 
             self.progress.emit("体检完成，报告已生成到界面")
             self.scan_finished.emit(report)
@@ -184,7 +189,7 @@ class MainWindow(QMainWindow):
         self.menu = QListWidget()
         self.menu.setObjectName("sidebar")
         self.menu.setFixedWidth(220)
-        for text in ["体检概览", "硬件信息", "运行程序", "空间分析", "自启动管理", "AI 分析报告"]:
+        for text in ["电脑现在怎么样", "空间都被谁占了", "谁在偷偷运行", "硬件哪里不够", "该怎么处理"]:
             QListWidgetItem(text, self.menu)
         body_layout.addWidget(self.menu)
 
@@ -193,18 +198,16 @@ class MainWindow(QMainWindow):
         body_layout.addWidget(self.stack, 1)
 
         self.home_page = self._build_home_page()
-        self.hardware_page, self.hardware_table = self._build_table_page("硬件信息", "系统、CPU、内存与基础硬件状态")
-        self.process_page, self.process_table = self._build_table_page("运行程序", "按资源占用排序，快速发现可疑进程")
-        self.disk_page, self.disk_table = self._build_table_page("空间分析", "磁盘分区、常见大目录与缓存占用")
-        self.startup_page, self.startup_table = self._build_table_page("自启动管理", "开机启动项与保留/禁用建议")
+        self.disk_page, self.disk_table = self._build_table_page("空间都被谁占了", "C 盘、缓存、回收站、桌面和下载目录会在这里解释清楚")
+        self.process_page, self.process_table = self._build_table_page("谁在偷偷运行", "正在运行的软件和开机自启动项会合并展示")
+        self.hardware_page, self.hardware_table = self._build_table_page("硬件哪里不够", "判断 CPU、内存、硬盘和常用软件是否够用")
         self.ai_page = self._build_ai_page()
 
         for page in [
             self.home_page,
-            self.hardware_page,
-            self.process_page,
             self.disk_page,
-            self.startup_page,
+            self.process_page,
+            self.hardware_page,
             self.ai_page,
         ]:
             self.stack.addWidget(page)
@@ -224,7 +227,7 @@ class MainWindow(QMainWindow):
         logo.setObjectName("logo")
         title = QLabel("BenBenPCCheck")
         title.setObjectName("appName")
-        caption = QLabel("电脑体检助手")
+        caption = QLabel("电脑卡顿分析助手")
         caption.setObjectName("appCaption")
 
         close_btn = QPushButton("")
@@ -264,20 +267,36 @@ class MainWindow(QMainWindow):
 
         left = QVBoxLayout()
         left.setSpacing(12)
-        self.status_kicker = QLabel("SYSTEM HEALTH")
+        self.status_kicker = QLabel("SLOWDOWN ANALYSIS")
         self.status_kicker.setObjectName("kicker")
-        self.status_title = QLabel("准备开始体检")
+        self.status_title = QLabel("一键找出电脑为什么卡")
         self.status_title.setObjectName("heroTitle")
-        self.status_subtitle = QLabel("点击一键体检，扫描过程会在右侧实时输出。")
+        self.status_subtitle = QLabel("不乱清理，不乱优化，先看懂哪里拖慢了电脑。")
         self.status_subtitle.setObjectName("heroSub")
         self.scan_btn = QPushButton("一键体检")
         self.scan_btn.setObjectName("primaryButton")
         self.scan_btn.clicked.connect(self.run_scan)
+        action_row = QHBoxLayout()
+        action_row.setSpacing(10)
+        clean_btn = QPushButton("立即安全清理")
+        startup_btn = QPushButton("优化启动项")
+        report_btn = QPushButton("生成 AI 报告")
+        clean_btn.setObjectName("secondaryAction")
+        startup_btn.setObjectName("secondaryAction")
+        report_btn.setObjectName("secondaryAction")
+        clean_btn.clicked.connect(lambda: self.menu.setCurrentRow(1))
+        startup_btn.clicked.connect(lambda: self.menu.setCurrentRow(2))
+        report_btn.clicked.connect(lambda: self.menu.setCurrentRow(4))
+        action_row.addWidget(self.scan_btn)
+        action_row.addWidget(clean_btn)
+        action_row.addWidget(startup_btn)
+        action_row.addWidget(report_btn)
+        action_row.addStretch(1)
         left.addWidget(self.status_kicker)
         left.addWidget(self.status_title)
         left.addWidget(self.status_subtitle)
         left.addStretch(1)
-        left.addWidget(self.scan_btn, 0, Qt.AlignLeft)
+        left.addLayout(action_row)
 
         score_panel = QFrame()
         score_panel.setObjectName("scorePanel")
@@ -285,15 +304,18 @@ class MainWindow(QMainWindow):
         score_layout.setContentsMargins(22, 20, 22, 20)
         self.score_label = QLabel("--")
         self.score_label.setObjectName("score")
-        self.score_note = QLabel("综合评分")
+        self.score_note = QLabel("健康分")
         self.score_note.setObjectName("scoreNote")
         self.score_bar = QProgressBar()
         self.score_bar.setObjectName("scoreBar")
         self.score_bar.setRange(0, 100)
         self.score_bar.setValue(0)
+        self.optimization_label = QLabel("优化空间：--")
+        self.optimization_label.setObjectName("scoreSub")
         score_layout.addWidget(self.score_note)
         score_layout.addWidget(self.score_label)
         score_layout.addWidget(self.score_bar)
+        score_layout.addWidget(self.optimization_label)
 
         hero_layout.addLayout(left, 1)
         hero_layout.addWidget(score_panel)
@@ -304,8 +326,8 @@ class MainWindow(QMainWindow):
         self.cpu_card = StatCard("CPU", "--", "等待检测")
         self.mem_card = StatCard("内存", "--", "等待检测")
         self.disk_card = StatCard("磁盘 C:", "--", "等待检测")
-        self.process_card = StatCard("高占用程序", "--", "等待检测")
-        self.startup_card = StatCard("启动项", "--", "等待检测")
+        self.process_card = StatCard("后台软件", "--", "等待检测")
+        self.startup_card = StatCard("自启动", "--", "等待检测")
         self.clean_card = StatCard("可清理空间", "--", "等待检测")
         for index, card in enumerate(
             [self.cpu_card, self.mem_card, self.disk_card, self.process_card, self.startup_card, self.clean_card]
@@ -315,8 +337,8 @@ class MainWindow(QMainWindow):
 
         bottom = QGridLayout()
         bottom.setSpacing(12)
-        issues_panel = MetricPanel("主要问题")
-        issues_panel.layout().addWidget(self._make_text_panel("issue_view", "体检后会显示优先处理项"))
+        issues_panel = MetricPanel("当前最影响体验的 3 个问题")
+        issues_panel.layout().addWidget(self._make_text_panel("issue_view", "体检后会显示原因、影响和建议"))
         progress_panel = MetricPanel("体检过程")
         progress_panel.layout().addWidget(self._make_text_panel("progress_view", "扫描过程会持续输出在这里"))
         bottom.addWidget(issues_panel, 0, 0)
@@ -366,9 +388,9 @@ class MainWindow(QMainWindow):
         v.setContentsMargins(24, 22, 24, 24)
         v.setSpacing(14)
 
-        title = QLabel("AI 分析报告")
+        title = QLabel("该怎么处理")
         title.setObjectName("pageTitle")
-        sub = QLabel("导出报告或复制固定模板，交给 AI 做进一步分析。")
+        sub = QLabel("按风险从低到高整理优化步骤，并生成电脑诊断报告。")
         sub.setObjectName("pageSub")
         actions = QHBoxLayout()
         export_json_btn = QPushButton("导出 JSON")
@@ -389,6 +411,15 @@ class MainWindow(QMainWindow):
         v.addWidget(title)
         v.addWidget(sub)
         v.addLayout(actions)
+        self.task_table = QTableWidget()
+        self.task_table.setObjectName("dataTable")
+        self.task_table.setAlternatingRowColors(True)
+        self.task_table.verticalHeader().setVisible(False)
+        self.task_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.task_table.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.task_table.setSelectionBehavior(QTableWidget.SelectRows)
+        self.task_table.setShowGrid(False)
+        v.addWidget(self.task_table, 1)
         v.addWidget(self.ai_prompt_view, 1)
         return page
 
@@ -445,6 +476,7 @@ class MainWindow(QMainWindow):
     def _refresh_views(self, report: dict):
         score = report.get("score", {})
         ip = report.get("ip_status", {})
+        product = report.get("product", {})
         cpu = report.get("hardware", {}).get("cpu", {})
         mem = report.get("hardware", {}).get("memory", {})
         processes = report.get("processes", {})
@@ -452,31 +484,127 @@ class MainWindow(QMainWindow):
         high_count = len(processes.get("high_cpu_processes", [])) + len(processes.get("high_memory_processes", []))
         cleanable_size = sum(i.get("size_gb", 0) for i in report.get("cleanable_items", []))
         startup_count = report.get("startup_items", {}).get("total_count", 0)
-        total_score = score.get("total_score", 0)
+        health_score = score.get("health_score", score.get("total_score", 0))
+        optimization_score = score.get("optimization_score", 0)
 
-        self.score_label.setText(str(total_score))
-        self.score_bar.setValue(int(total_score))
+        self.score_label.setText(str(health_score))
+        self.score_bar.setValue(int(health_score))
+        self.optimization_label.setText(f"优化空间：{optimization_score}/100")
         self.status_kicker.setText("SCAN COMPLETE")
-        self.status_title.setText(f"电脑状态：{ip.get('display_name', '已体检')}")
-        self.status_subtitle.setText(ip.get("message", "体检完成"))
+        self.status_title.setText(f"你的电脑现在{ip.get('display_name', '已体检')}")
+        self.status_subtitle.setText(product.get("plain_summary") or ip.get("message", "体检完成"))
         self.cpu_card.set_data(f"{cpu.get('current_usage_percent', 0)}%", f"{cpu.get('physical_cores', 0)} 核 / {cpu.get('logical_cores', 0)} 线程")
         self.mem_card.set_data(f"{mem.get('usage_percent', 0)}%", f"已用 {mem.get('used_gb', 0)} / {mem.get('total_gb', 0)} GB")
         if c_drive:
             self.disk_card.set_data(f"{c_drive.get('usage_percent', 0)}%", f"剩余 {c_drive.get('free_gb', 0)} GB")
-        self.process_card.set_data(str(high_count), "CPU >30% 或内存 >2GB")
-        self.startup_card.set_data(str(startup_count), "开机自启动项")
+        self.process_card.set_data(str(high_count), "高占用后台程序")
+        self.startup_card.set_data(str(startup_count), "开机自动启动")
         self.clean_card.set_data(f"{round(cleanable_size, 1)} GB", "安全可清理项")
 
-        issues = report.get("diagnosis", {}).get("main_issues", [])
-        if issues:
-            self.issue_view.setPlainText("\n".join(f"{i}. {x['title']}：{x['detail']}" for i, x in enumerate(issues, 1)))
+        problem_cards = product.get("problem_cards", [])
+        if problem_cards:
+            self.issue_view.setPlainText(
+                "\n\n".join(
+                    [
+                        f"{i}. {x['title']}\n证据：{x['evidence']}\n影响：{x['impact']}\n建议：{x['suggestion']}"
+                        for i, x in enumerate(problem_cards[:3], 1)
+                    ]
+                )
+            )
         else:
             self.issue_view.setPlainText("暂未发现明显问题。")
 
-        self._fill_table(self.hardware_table, ["项目", "内容"], self._hardware_rows(report))
-        self._fill_table(self.process_table, ["程序", "PID", "CPU", "内存", "路径"], self._process_rows(report))
-        self._fill_table(self.disk_table, ["名称", "路径/盘符", "容量/大小", "状态"], self._disk_rows(report))
-        self._fill_table(self.startup_table, ["名称", "来源", "建议", "路径"], self._startup_rows(report))
+        self._fill_table(self.disk_table, ["分类", "名称", "大小/容量", "说明", "建议操作"], self._space_rows(report))
+        self._fill_table(self.process_table, ["类型", "名称", "CPU/内存", "说明", "建议"], self._background_rows(report))
+        self._fill_table(self.hardware_table, ["模块", "状态", "影响", "建议"], self._hardware_bottleneck_rows(report))
+        self._fill_table(self.task_table, ["分级", "任务", "风险", "预期收益", "按钮"], self._task_rows(report))
+
+    def _space_rows(self, report: dict):
+        rows = []
+        product = report.get("product", {})
+        for item in report.get("disk_partitions", []):
+            status = "空间充足，不是当前卡顿主要原因。" if item.get("free_gb", 0) >= 40 else "空间偏少，建议优先整理。"
+            rows.append([
+                "磁盘总览",
+                item.get("drive", ""),
+                f"剩余 {item.get('free_gb', 0)}GB / 共 {item.get('total_gb', 0)}GB",
+                status,
+                "查看占用",
+            ])
+        sections = product.get("space_sections", {})
+        for group, title in [("safe_clean", "放心清理"), ("confirm_clean", "确认后清理"), ("manual整理", "手动整理")]:
+            for item in sections.get(group, []):
+                rows.append([
+                    title,
+                    item.get("name", ""),
+                    f"{item.get('size_gb', 0)}GB",
+                    item.get("explain", ""),
+                    item.get("button", ""),
+                ])
+        return rows
+
+    def _background_rows(self, report: dict):
+        rows = []
+        process_summary = report.get("product", {}).get("process_summary", {})
+        rows.append([
+            "顶部总结",
+            "当前运行程序",
+            f"{process_summary.get('total_count', 0)} 个",
+            f"高 CPU {process_summary.get('high_cpu_count', 0)} 个，高内存 {process_summary.get('high_memory_count', 0)} 个。",
+            f"建议关闭 {process_summary.get('suggest_close_count', 0)} 个",
+        ])
+        for item in process_summary.get("items", [])[:45]:
+            rows.append([
+                item.get("category", ""),
+                item.get("name", ""),
+                f"{item.get('cpu_percent', 0)}% / {item.get('memory_mb', 0)}MB",
+                item.get("explain", ""),
+                "可关闭" if item.get("can_close") else "建议保留",
+            ])
+        startup_summary = report.get("product", {}).get("startup_summary", {})
+        rows.append([
+            "开机自启总结",
+            "启动项",
+            f"{startup_summary.get('total_count', 0)} 个",
+            f"建议关闭 {startup_summary.get('disable_count', 0)} 个，可疑 {startup_summary.get('suspicious_count', 0)} 个。",
+            "优化启动项",
+        ])
+        for item in startup_summary.get("items", [])[:35]:
+            rows.append([
+                item.get("category", ""),
+                item.get("name", ""),
+                item.get("source", ""),
+                item.get("impact", ""),
+                " / ".join(item.get("buttons", [])),
+            ])
+        return rows
+
+    def _hardware_bottleneck_rows(self, report: dict):
+        rows = []
+        for item in report.get("product", {}).get("hardware_bottlenecks", []):
+            rows.append([item.get("name", ""), item.get("status", ""), item.get("impact", ""), item.get("suggestion", "")])
+        for item in report.get("product", {}).get("software_fit", []):
+            rows.append([
+                f"软件适配：{item.get('name', '')}",
+                item.get("summary", ""),
+                item.get("bottleneck", ""),
+                item.get("suggestion", ""),
+            ])
+        return rows
+
+    def _task_rows(self, report: dict):
+        rows = []
+        for item in report.get("product", {}).get("optimization_tasks", []):
+            rows.append([
+                item.get("group", ""),
+                item.get("title", ""),
+                item.get("risk", ""),
+                item.get("expected_gain", ""),
+                item.get("button_text", ""),
+            ])
+        if not rows:
+            rows.append(["保持观察", "暂未发现必须处理的事项", "low", "保持当前状态", "再次体检"])
+        return rows
 
     def _hardware_rows(self, report: dict):
         computer = report.get("computer", {})
@@ -736,6 +864,15 @@ QPushButton#primaryButton {
 }
 QPushButton#primaryButton:hover {
     background: #e7e7ea;
+}
+QPushButton#secondaryAction {
+    background: #15151a;
+    color: #f5f5f7;
+    border: 1px solid #2d2d35;
+    padding: 12px 18px;
+}
+QPushButton#secondaryAction:hover {
+    background: #24242b;
 }
 QPushButton:disabled {
     background: #1a1a1f;
