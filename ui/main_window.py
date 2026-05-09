@@ -10,12 +10,14 @@ from PyQt5.QtCore import QPoint, QThread, QTimer, Qt, pyqtSignal
 from PyQt5.QtGui import QColor, QFont, QIcon, QPixmap
 from PyQt5.QtWidgets import (
     QApplication,
+    QCheckBox,
     QFrame,
     QGraphicsDropShadowEffect,
     QGridLayout,
     QHBoxLayout,
     QHeaderView,
     QLabel,
+    QLineEdit,
     QListWidget,
     QListWidgetItem,
     QMainWindow,
@@ -33,8 +35,10 @@ from PyQt5.QtWidgets import (
 
 from config import AI_PROMPT_TEMPLATE
 from core.ai_analysis_service import analyze_report_with_ai
+from core.ai_client import test_ai_connection
 from core.ai_prompt_builder import build_ai_prompt
 from core.ai_result_parser import build_local_ai_result, emotion_key
+from core.key_manager import DEFAULT_BASE_URL, DEFAULT_MODEL, load_ai_config, mask_key, save_ai_config
 from core.cleaner import scan_cleanable_items
 from core.diagnosis_engine import build_diagnosis
 from core.disk_health import scan_disk_health
@@ -225,7 +229,8 @@ class MainWindow(QMainWindow):
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setWindowTitle("YIDIS 伊迪斯设备检测")
         self.setWindowIcon(QIcon(str(Path(__file__).resolve().parents[1] / "assets" / "app_icon.ico")))
-        self.resize(1280, 820)
+        self.resize(1360, 860)
+        self.setMinimumSize(1280, 820)
         self.current_report = None
         self.current_ai_status = {"success": False, "source": "none", "message": "尚未进行 AI 分析"}
         self.worker = None
@@ -611,6 +616,86 @@ class MainWindow(QMainWindow):
         layout.addWidget(info, 1)
         return page
 
+    def _build_settings_page(self) -> QWidget:
+        page = QWidget()
+        page.setObjectName("page")
+        layout = QVBoxLayout(page)
+        layout.setContentsMargins(24, 22, 24, 24)
+        layout.setSpacing(14)
+        title = QLabel("设置")
+        title.setObjectName("pageTitle")
+        panel = QFrame()
+        panel.setObjectName("panel")
+        form = QGridLayout(panel)
+        form.setContentsMargins(18, 18, 18, 18)
+        form.setHorizontalSpacing(12)
+        form.setVerticalSpacing(12)
+
+        cfg = load_ai_config()
+        self.ai_enable_check = QCheckBox("启用 AI 分析")
+        self.ai_enable_check.setChecked(bool(cfg.get("enable_ai_analysis", True)))
+        self.api_key_edit = QLineEdit(cfg.get("api_key", ""))
+        self.api_key_edit.setPlaceholderText("填写 AIHubMix API Key")
+        self.api_key_edit.setEchoMode(QLineEdit.Password)
+        self.base_url_edit = QLineEdit(cfg.get("base_url") or DEFAULT_BASE_URL)
+        self.model_edit = QLineEdit(cfg.get("model") or DEFAULT_MODEL)
+        self.show_key_check = QCheckBox("显示 Key")
+        self.show_key_check.toggled.connect(lambda checked: self.api_key_edit.setEchoMode(QLineEdit.Normal if checked else QLineEdit.Password))
+        self.connection_status_label = QLabel(self._settings_status_text(cfg))
+        self.connection_status_label.setObjectName("pageSub")
+
+        test_btn = QPushButton("测试连接")
+        test_btn.clicked.connect(self.on_test_ai_connection)
+        save_btn = QPushButton("保存设置")
+        save_btn.setObjectName("primaryButton")
+        save_btn.clicked.connect(self.on_save_ai_settings)
+
+        form.addWidget(self.ai_enable_check, 0, 0, 1, 3)
+        form.addWidget(QLabel("API Key"), 1, 0)
+        form.addWidget(self.api_key_edit, 1, 1)
+        form.addWidget(self.show_key_check, 1, 2)
+        form.addWidget(QLabel("Base URL"), 2, 0)
+        form.addWidget(self.base_url_edit, 2, 1, 1, 2)
+        form.addWidget(QLabel("模型 ID"), 3, 0)
+        form.addWidget(self.model_edit, 3, 1, 1, 2)
+        form.addWidget(test_btn, 4, 1)
+        form.addWidget(save_btn, 4, 2)
+        form.addWidget(self.connection_status_label, 5, 0, 1, 3)
+        layout.addWidget(title)
+        layout.addWidget(panel)
+        layout.addStretch(1)
+        return page
+
+    def _settings_payload(self) -> dict:
+        key = self.api_key_edit.text().strip()
+        return {
+            "aihubmix_api_key": key,
+            "api_key": key,
+            "base_url": self.base_url_edit.text().strip() or DEFAULT_BASE_URL,
+            "model": self.model_edit.text().strip() or DEFAULT_MODEL,
+            "enable_ai_analysis": self.ai_enable_check.isChecked(),
+        }
+
+    def _settings_status_text(self, cfg: dict) -> str:
+        key = cfg.get("api_key") or cfg.get("aihubmix_api_key") or ""
+        source = cfg.get("path") or cfg.get("source") or "默认配置"
+        return f"当前状态：{mask_key(key)}，Base URL：{cfg.get('base_url', DEFAULT_BASE_URL)}，模型：{cfg.get('model', DEFAULT_MODEL)}，来源：{source}"
+
+    def on_save_ai_settings(self):
+        payload = self._settings_payload()
+        path = save_ai_config(payload)
+        self.connection_status_label.setText(f"设置已保存到 {path}。红点不会立即变绿，重新体检且 AI 分析成功后才会变绿。")
+
+    def on_test_ai_connection(self):
+        self.connection_status_label.setText("正在测试连接...")
+        QApplication.processEvents()
+        ok, message = test_ai_connection(self._settings_payload())
+        self.connection_status_label.setText(message)
+        if ok:
+            QMessageBox.information(self, "测试连接", "连接成功")
+        else:
+            QMessageBox.warning(self, "测试连接失败", message)
+
     def _panel(self, title: str) -> QFrame:
         panel = QFrame()
         panel.setObjectName("panel")
@@ -883,6 +968,41 @@ class MainWindow(QMainWindow):
             else:
                 lines.append(f"{index}. {item}")
         return "\n\n".join(lines)
+
+    def _build_hardware_chart(self, ai_result: dict, report: dict) -> str:
+        review = ai_result.get("hardware_market_review", {})
+        items = review.get("items") or report.get("scores", {}).get("hardware_market_score", {}).get("items", [])
+        if not items:
+            return "暂无硬件市场分布。"
+        rows = []
+        for item in items:
+            percent = int(item.get("bar_percent", 0) or 0)
+            if not percent:
+                score = int(item.get("score", 0) or 0)
+                max_score = int(item.get("max_score", 100) or 100)
+                percent = int(score / max_score * 100) if max_score else score
+            percent = max(0, min(100, percent))
+            filled = int(round(percent / 10))
+            bar = "■" * filled + "□" * (10 - filled)
+            level = item.get("level") or item.get("market_position") or ""
+            rows.append(f"{item.get('name', ''):<6} {level:<4}  低端 {bar} 高端")
+        return "\n".join(rows)
+
+    def _build_pressure_chart(self, ai_result: dict, report: dict) -> str:
+        review = ai_result.get("software_smoothness_review", {})
+        apps = review.get("pressure_apps") or report.get("software", {}).get("process_groups", [])[:5]
+        if not apps:
+            return "暂无明显软件压力。"
+        rows = ["软件名      压力  内存"]
+        for item in apps[:5]:
+            name = item.get("name", "")
+            level = item.get("level") or item.get("pressure_level", "")
+            memory = float(item.get("memory_mb", 0) or 0)
+            memory_text = f"{round(memory / 1024, 1)}GB" if memory >= 1024 else f"{round(memory)}MB"
+            rows.append(f"{name:<10} {level:<2} {memory_text}")
+        if len(apps) > 5:
+            rows.append("查看全部软件压力")
+        return "\n".join(rows)
 
     def _set_stage(self, stage: str):
         names = {

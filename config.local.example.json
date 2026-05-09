@@ -1,5 +1,6 @@
 {
-  "aihubmix_api_key": "请填写你自己的 key，不要提交到 GitHub",
+  "aihubmix_api_key": "请填写你自己的 key，不要提交 config.local.json",
   "base_url": "https://aihubmix.com/v1",
-  "model": "gpt-5.5"
+  "model": "gpt-5.5",
+  "enable_ai_analysis": true
 }
