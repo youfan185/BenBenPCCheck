@@ -1,2 +1,5 @@
-﻿PyQt5
+PyQt5
 psutil
+wmi
+pywin32
+openai

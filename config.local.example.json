@@ -1,0 +1,5 @@
+{
+  "aihubmix_api_key": "请填写你自己的 key，不要提交到 GitHub",
+  "base_url": "https://aihubmix.com/v1",
+  "model": "gpt-5.5"
+}

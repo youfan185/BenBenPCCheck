@@ -1,0 +1,50 @@
+{
+  "Photoshop": {
+    "category": "设计软件",
+    "process_names": ["Photoshop.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 20},
+    "recommended": {"memory_gb": 32, "cpu_threads": 8, "disk_free_gb": 100, "gpu_vram_gb": 4}
+  },
+  "PyCharm": {
+    "category": "开发工具",
+    "process_names": ["pycharm64.exe", "pycharm.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 20},
+    "recommended": {"memory_gb": 16, "cpu_threads": 8, "disk_free_gb": 40}
+  },
+  "Cursor": {
+    "category": "开发工具",
+    "process_names": ["Cursor.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 20},
+    "recommended": {"memory_gb": 16, "cpu_threads": 8, "disk_free_gb": 40}
+  },
+  "Chrome": {
+    "category": "浏览器",
+    "process_names": ["chrome.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 10},
+    "recommended": {"memory_gb": 16, "cpu_threads": 8, "disk_free_gb": 30}
+  },
+  "Edge": {
+    "category": "浏览器",
+    "process_names": ["msedge.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 10},
+    "recommended": {"memory_gb": 16, "cpu_threads": 8, "disk_free_gb": 30}
+  },
+  "微信": {
+    "category": "聊天社交",
+    "process_names": ["WeChat.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 10},
+    "recommended": {"memory_gb": 16, "cpu_threads": 4, "disk_free_gb": 30}
+  },
+  "Blender": {
+    "category": "3D / 渲染",
+    "process_names": ["blender.exe"],
+    "min": {"memory_gb": 16, "cpu_threads": 8, "disk_free_gb": 30, "gpu_vram_gb": 4},
+    "recommended": {"memory_gb": 32, "cpu_threads": 12, "disk_free_gb": 100, "gpu_vram_gb": 8}
+  },
+  "剪映": {
+    "category": "视频剪辑",
+    "process_names": ["JianyingPro.exe", "CapCut.exe"],
+    "min": {"memory_gb": 8, "cpu_threads": 4, "disk_free_gb": 30, "gpu_vram_gb": 2},
+    "recommended": {"memory_gb": 32, "cpu_threads": 8, "disk_free_gb": 100, "gpu_vram_gb": 6}
+  }
+}

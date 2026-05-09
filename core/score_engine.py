@@ -1,3 +1,7 @@
+from core.hardware_rules import score_hardware
+from core.software_rules import analyze_software_fit
+
+
 def _score_low_is_good(value: float, bands: list[tuple[float, int]]) -> int:
     for max_value, score in bands:
         if value <= max_value:
@@ -27,6 +31,15 @@ def _status_from_health(health_score: int, optimization_score: int) -> tuple[str
 
 
 def calculate_score(report: dict) -> dict:
+    hardware_score = score_hardware(report)
+    software_fit_score = analyze_software_fit(report)
+    system_usability_score = calculate_system_usability_score(report)
+    v2_total = round(
+        hardware_score["score"] * 0.30
+        + software_fit_score["score"] * 0.40
+        + system_usability_score["score"] * 0.30
+    )
+
     cpu = report.get("hardware", {}).get("cpu", {}).get("current_usage_percent", 0)
     mem = report.get("hardware", {}).get("memory", {}).get("usage_percent", 0)
     c_drive = next((d for d in report.get("disk_partitions", []) if str(d.get("drive", "")).upper().startswith("C:")), None)
@@ -54,8 +67,8 @@ def calculate_score(report: dict) -> dict:
     optimization_score = startup_score + clean_score + clutter_score + process_score + 50
     optimization_score = max(0, min(100, optimization_score))
 
-    total = round(health_score * 0.65 + optimization_score * 0.35)
-    level, display_level, ip_name, message = _status_from_health(health_score, optimization_score)
+    total = v2_total
+    level, display_level, ip_name, message = _status_from_health(hardware_score["score"], system_usability_score["score"])
 
     return {
         "total_score": total,
@@ -72,6 +85,9 @@ def calculate_score(report: dict) -> dict:
             "clean_score": clean_score,
             "clutter_score": clutter_score,
         },
+        "hardware_score": hardware_score,
+        "software_fit_score": software_fit_score,
+        "system_usability_score": system_usability_score,
         "ip_status": {
             "name": ip_name,
             "display_name": display_level,
@@ -80,3 +96,105 @@ def calculate_score(report: dict) -> dict:
             "message": message,
         },
     }
+
+
+def calculate_system_usability_score(report: dict) -> dict:
+    c_drive = next((d for d in report.get("disk_partitions", []) if str(d.get("drive", "")).upper().startswith("C:")), None)
+    c_free = c_drive.get("free_gb", 0) if c_drive else 0
+    c_usage = c_drive.get("usage_percent", 0) if c_drive else 0
+    cleanable = sum(i.get("size_gb", 0) for i in report.get("cleanable_items", []))
+    app_cache = sum(i.get("size_gb", 0) for i in report.get("large_folders", []) if "cache" in i.get("category", ""))
+    chat_files = sum(i.get("size_gb", 0) for i in report.get("large_folders", []) if i.get("category") in {"wechat_cache", "qq_cache"})
+    process_groups = report.get("process_groups", []) or report.get("software", {}).get("process_groups", [])
+    heavy_groups = [g for g in process_groups if g.get("pressure_level") in {"中", "高"}]
+    startup_count = report.get("startup_items", {}).get("total_count", 0)
+    suspicious = report.get("product", {}).get("startup_summary", {}).get("suspicious_count", 0)
+    if not suspicious:
+        suspicious = sum(1 for i in report.get("startup_items", {}).get("items", []) if not i.get("path"))
+
+    windows_points = 20
+    if report.get("windows_settings", {}).get("items"):
+        attention = sum(1 for i in report.get("windows_settings", {}).get("items", []) if i.get("level") in {"warning", "unknown"})
+        windows_points -= min(8, attention * 2)
+
+    space_points = 25
+    if not c_drive:
+        space_points = 12
+    elif c_free < 10 or c_usage > 95:
+        space_points = 5
+    elif c_free < 30 or c_usage > 90:
+        space_points = 13
+    elif c_free < 60:
+        space_points = 19
+    if cleanable > 30:
+        space_points -= 3
+
+    file_points = 20
+    if app_cache + chat_files > 80:
+        file_points = 9
+    elif app_cache + chat_files > 30:
+        file_points = 14
+    elif app_cache + chat_files > 10:
+        file_points = 17
+
+    background_points = 20 - min(16, len(heavy_groups) * 4)
+    startup_points = 15
+    if startup_count > 25:
+        startup_points -= 8
+    elif startup_count > 15:
+        startup_points -= 5
+    elif startup_count > 8:
+        startup_points -= 2
+    startup_points -= min(6, suspicious * 3)
+
+    total = max(0, min(100, int(round(windows_points + space_points + file_points + background_points + startup_points))))
+    if total >= 85:
+        status = "干净"
+    elif total >= 70:
+        status = "有点累"
+    elif total >= 55:
+        status = "需要整理"
+    else:
+        status = "风险较高"
+    return {
+        "score": total,
+        "status": status,
+        "summary": _system_summary(c_free, app_cache, chat_files, heavy_groups, suspicious),
+        "detail": {
+            "windows": windows_points,
+            "space_cache": space_points,
+            "software_files": file_points,
+            "background": background_points,
+            "startup_risk": startup_points,
+        },
+        "priority_items": _system_priority_items(c_free, cleanable, heavy_groups, startup_count, suspicious),
+        "do_not_touch": ["Windows 系统目录", "驱动和安全软件启动项", "不确定来源的大文件", "注册表和系统服务"],
+    }
+
+
+def _system_summary(c_free: float, app_cache: float, chat_files: float, heavy_groups: list[dict], suspicious: int) -> str:
+    points = []
+    if c_free and c_free < 40:
+        points.append(f"C盘剩余 {c_free}GB")
+    if app_cache + chat_files > 10:
+        points.append(f"聊天/缓存文件约 {round(app_cache + chat_files, 1)}GB")
+    if heavy_groups:
+        points.append(f"{len(heavy_groups)} 类后台进程占用明显")
+    if suspicious:
+        points.append(f"{suspicious} 个启动项建议核实")
+    return "、".join(points) + "。" if points else "系统环境整体干净，暂未发现明显拖后腿项目。"
+
+
+def _system_priority_items(c_free: float, cleanable: float, heavy_groups: list[dict], startup_count: int, suspicious: int) -> list[str]:
+    rows = []
+    if heavy_groups:
+        rows.append("先确认高占用的软件进程组，尤其是多进程叠加的软件。")
+    if c_free and c_free < 40:
+        rows.append("把 C 盘可用空间恢复到 40GB 以上。")
+    if suspicious:
+        rows.append("核实可疑启动项，只禁用观察，不直接删除文件。")
+    if startup_count > 12:
+        rows.append("关闭聊天、网盘、更新器、游戏平台等非必要自启动。")
+    if cleanable > 5:
+        rows.append("最后再处理低风险临时文件和缓存。")
+    return rows[:5]

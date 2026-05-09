@@ -1,0 +1,5260 @@
+{
+  "report_version": "1.4",
+  "software_name": "BenBen AI 电脑诊断助手",
+  "software_version": "1.4.0",
+  "scan_time": "2026-05-09 05:32:29",
+  "computer": {
+    "computer_name": "WIN-20251204YBT",
+    "user_name": "WIN-20251204YBT",
+    "os_name": "Windows",
+    "os_version": "10.0.19045",
+    "system_type": "AMD64",
+    "hostname": "WIN-20251204YBT"
+  },
+  "hardware": {
+    "cpu": {
+      "name": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+      "physical_cores": 8,
+      "logical_cores": 16,
+      "current_usage_percent": 1.2
+    },
+    "memory": {
+      "total_gb": 39.9,
+      "used_gb": 18.2,
+      "available_gb": 21.7,
+      "usage_percent": 45.7
+    },
+    "gpu": [
+      {
+        "name": "NVIDIA GeForce RTX 3060",
+        "vram_gb": 12.0,
+        "driver_version": "560.94",
+        "temperature_c": 50.0,
+        "utilization_percent": 1.0,
+        "vendor": "NVIDIA",
+        "source": "nvidia-smi",
+        "status": "detected"
+      }
+    ],
+    "disks": []
+  },
+  "gpu_status": {
+    "status": "ok",
+    "message": "已读取到显卡信息。"
+  },
+  "disk_partitions": [
+    {
+      "drive": "C:",
+      "mountpoint": "C:\\",
+      "total_gb": 953.9,
+      "used_gb": 335.3,
+      "free_gb": 618.5,
+      "usage_percent": 35.2,
+      "risk_level": "good"
+    },
+    {
+      "drive": "E:",
+      "mountpoint": "E:\\",
+      "total_gb": 447.1,
+      "used_gb": 182.6,
+      "free_gb": 264.5,
+      "usage_percent": 40.8,
+      "risk_level": "good"
+    },
+    {
+      "drive": "F:",
+      "mountpoint": "F:\\",
+      "total_gb": 931.5,
+      "used_gb": 801.5,
+      "free_gb": 130.0,
+      "usage_percent": 86.0,
+      "risk_level": "good"
+    }
+  ],
+  "large_folders": [
+    {
+      "name": "Documents",
+      "path": "C:\\Users\\Administrator\\Documents",
+      "size_gb": 65.74,
+      "category": "documents",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Desktop",
+      "path": "C:\\Users\\Administrator\\Desktop",
+      "size_gb": 45.95,
+      "category": "desktop_files",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Adobe Cache",
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Adobe",
+      "size_gb": 1.54,
+      "category": "adobe_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Downloads",
+      "path": "C:\\Users\\Administrator\\Downloads",
+      "size_gb": 1.53,
+      "category": "download_files",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "User Temp",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+      "size_gb": 1.5,
+      "category": "temp",
+      "safe_to_clean": true,
+      "suggestion": "可安全清理"
+    },
+    {
+      "name": "Tencent Files",
+      "path": "C:\\Users\\Administrator\\Documents\\Tencent Files",
+      "size_gb": 0.62,
+      "category": "qq_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    },
+    {
+      "name": "Chrome Cache",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+      "size_gb": 0.43,
+      "category": "browser_cache",
+      "safe_to_clean": false,
+      "suggestion": "建议先确认重要文件后清理"
+    }
+  ],
+  "cleanable_items": [
+    {
+      "name": "Windows Temp",
+      "path": "C:\\Windows\\Temp",
+      "size_gb": 0.03,
+      "risk": "safe",
+      "default_selected": true
+    },
+    {
+      "name": "User Temp",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+      "size_gb": 1.5,
+      "risk": "safe",
+      "default_selected": true
+    },
+    {
+      "name": "Recycle Bin",
+      "path": "C:\\$Recycle.Bin",
+      "size_gb": 0.03,
+      "risk": "need_confirm",
+      "default_selected": false
+    }
+  ],
+  "process_list": [
+    {
+      "name": "pycharm64.exe",
+      "pid": 31700,
+      "cpu_percent": 0.0,
+      "memory_mb": 2005.5,
+      "path": "C:\\软件\\PyCharm 2025.3.1\\bin\\pycharm64.exe"
+    },
+    {
+      "name": "explorer.exe",
+      "pid": 33068,
+      "cpu_percent": 0.0,
+      "memory_mb": 1643.9,
+      "path": "C:\\Windows\\explorer.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 29128,
+      "cpu_percent": 0.0,
+      "memory_mb": 706.7,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "Weixin.exe",
+      "pid": 20884,
+      "cpu_percent": 0.0,
+      "memory_mb": 705.9,
+      "path": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe"
+    },
+    {
+      "name": "SearchApp.exe",
+      "pid": 35888,
+      "cpu_percent": 0.0,
+      "memory_mb": 451.8,
+      "path": "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe"
+    },
+    {
+      "name": "wegame.exe",
+      "pid": 21004,
+      "cpu_percent": 0.0,
+      "memory_mb": 447.7,
+      "path": "C:\\游戏\\WeGame\\wegame.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 13400,
+      "cpu_percent": 0.0,
+      "memory_mb": 438.4,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 10956,
+      "cpu_percent": 0.0,
+      "memory_mb": 383.9,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 19680,
+      "cpu_percent": 0.0,
+      "memory_mb": 343.1,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "QQ.exe",
+      "pid": 15840,
+      "cpu_percent": 0.0,
+      "memory_mb": 340.2,
+      "path": "C:\\软件\\QQ\\QQ.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 31508,
+      "cpu_percent": 0.0,
+      "memory_mb": 321.5,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    },
+    {
+      "name": "SodaMusic.exe",
+      "pid": 18296,
+      "cpu_percent": 0.0,
+      "memory_mb": 317.2,
+      "path": "C:\\软件\\汽水\\Soda Music\\3.1.2\\SodaMusic.exe"
+    },
+    {
+      "name": "codex.exe",
+      "pid": 30024,
+      "cpu_percent": 0.0,
+      "memory_mb": 304.1,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 34700,
+      "cpu_percent": 0.0,
+      "memory_mb": 297.8,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "dwm.exe",
+      "pid": 1840,
+      "cpu_percent": 0.0,
+      "memory_mb": 289.3,
+      "path": "C:\\Windows\\System32\\dwm.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 28016,
+      "cpu_percent": 0.0,
+      "memory_mb": 280.2,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 39356,
+      "cpu_percent": 0.0,
+      "memory_mb": 274.6,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "078助手.exe",
+      "pid": 33788,
+      "cpu_percent": 0.0,
+      "memory_mb": 273.7,
+      "path": "C:\\软件\\078\\lol078\\078助手.exe"
+    },
+    {
+      "name": "Codex.exe",
+      "pid": 31780,
+      "cpu_percent": 0.0,
+      "memory_mb": 271.3,
+      "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 27640,
+      "cpu_percent": 0.0,
+      "memory_mb": 271.2,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "SearchApp.exe",
+      "pid": 6804,
+      "cpu_percent": 0.0,
+      "memory_mb": 270.5,
+      "path": "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe"
+    },
+    {
+      "name": "wetype_server.exe",
+      "pid": 4232,
+      "cpu_percent": 0.0,
+      "memory_mb": 270.4,
+      "path": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\wetype_server.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 8804,
+      "cpu_percent": 0.0,
+      "memory_mb": 266.9,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40748,
+      "cpu_percent": 0.0,
+      "memory_mb": 263.9,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 31404,
+      "cpu_percent": 0.0,
+      "memory_mb": 261.6,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "AliWorkbench.exe",
+      "pid": 39756,
+      "cpu_percent": 0.0,
+      "memory_mb": 261.6,
+      "path": "C:\\软件\\千牛\\AliWorkbench.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40952,
+      "cpu_percent": 0.0,
+      "memory_mb": 256.4,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "Creative Cloud UI Helper.exe",
+      "pid": 22388,
+      "cpu_percent": 0.0,
+      "memory_mb": 255.6,
+      "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40524,
+      "cpu_percent": 0.0,
+      "memory_mb": 251.5,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 11244,
+      "cpu_percent": 0.0,
+      "memory_mb": 251.4,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 25004,
+      "cpu_percent": 0.0,
+      "memory_mb": 242.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 1244,
+      "cpu_percent": 0.0,
+      "memory_mb": 235.4,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "WeChatAppEx.exe",
+      "pid": 31868,
+      "cpu_percent": 0.0,
+      "memory_mb": 232.0,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 6720,
+      "cpu_percent": 0.0,
+      "memory_mb": 229.9,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    },
+    {
+      "name": "Creative Cloud.exe",
+      "pid": 22568,
+      "cpu_percent": 0.0,
+      "memory_mb": 229.8,
+      "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe"
+    },
+    {
+      "name": "UGREEN NAS.exe",
+      "pid": 36416,
+      "cpu_percent": 0.0,
+      "memory_mb": 222.8,
+      "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe"
+    },
+    {
+      "name": "powershell.exe",
+      "pid": 40348,
+      "cpu_percent": 0.0,
+      "memory_mb": 219.7,
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 17984,
+      "cpu_percent": 0.0,
+      "memory_mb": 218.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "ShellExperienceHost.exe",
+      "pid": 30588,
+      "cpu_percent": 0.0,
+      "memory_mb": 216.3,
+      "path": "C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 40504,
+      "cpu_percent": 0.0,
+      "memory_mb": 215.7,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "Adobe Desktop Service.exe",
+      "pid": 22856,
+      "cpu_percent": 0.0,
+      "memory_mb": 214.8,
+      "path": "C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\ADS\\Adobe Desktop Service.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 29868,
+      "cpu_percent": 0.0,
+      "memory_mb": 214.3,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 37008,
+      "cpu_percent": 0.0,
+      "memory_mb": 214.3,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "078助手.exe",
+      "pid": 43524,
+      "cpu_percent": 0.0,
+      "memory_mb": 214.2,
+      "path": "C:\\软件\\078\\lol078\\078助手.exe"
+    },
+    {
+      "name": "BaiduNetdiskUnite.exe",
+      "pid": 35624,
+      "cpu_percent": 0.0,
+      "memory_mb": 211.1,
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe"
+    },
+    {
+      "name": "wetype_update.exe",
+      "pid": 8704,
+      "cpu_percent": 0.0,
+      "memory_mb": 208.3,
+      "path": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\wetype_update.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 16836,
+      "cpu_percent": 0.0,
+      "memory_mb": 203.3,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 19772,
+      "cpu_percent": 0.0,
+      "memory_mb": 201.6,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 44672,
+      "cpu_percent": 0.0,
+      "memory_mb": 201.0,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    },
+    {
+      "name": "AliRender.exe",
+      "pid": 11304,
+      "cpu_percent": 0.0,
+      "memory_mb": 200.8,
+      "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe"
+    }
+  ],
+  "processes": {
+    "total_count": 50,
+    "high_cpu_processes": [],
+    "high_memory_processes": []
+  },
+  "startup_items": {
+    "total_count": 14,
+    "items": [
+      {
+        "name": "sdstj",
+        "path": "",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "stat",
+        "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "360huabao",
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "BaiduYunDetect",
+        "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "QQNT",
+        "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "BaiduYunGuanjia",
+        "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Weixin",
+        "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "CCXProcess",
+        "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "汽水音乐",
+        "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "EPLTarget\\P0000000000000000",
+        "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Spotify",
+        "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "com.lbyczf.clashwin",
+        "path": "C:\\Users\\Administrator\\Desktop\\不常用\\Clash\\Clash for Windows.exe",
+        "source": "HKCU Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+        "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+        "source": "HKLM Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      },
+      {
+        "name": "AdobeGCInvoker-1.0",
+        "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+        "source": "HKLM Run",
+        "status": "enabled",
+        "recommendation": "optional_disable"
+      }
+    ]
+  },
+  "installed_software": [
+    {
+      "name": "078助手 11.1.0",
+      "version": "11.1.0",
+      "publisher": "078 Team",
+      "install_location": "",
+      "uninstall_string": "\"C:\\软件\\078\\lol078\\Uninstall 078助手.exe\" /allusers",
+      "estimated_size_mb": 306
+    },
+    {
+      "name": "Adobe After Effects 2020",
+      "version": "17.0",
+      "publisher": "Adobe Inc.",
+      "install_location": "C:\\软件\\AE",
+      "uninstall_string": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\HDBox\\Uninstaller.exe\" --uninstall=1 --sapCode=AEFT --productVersion=17.0 --productPlatform=win64 --productAdobeCode={AEFT-17.0-64-ADBEADBEADBEADBEADBEADB} --productName=\"After Effects\" --mode=1",
+      "estimated_size_mb": 2693
+    },
+    {
+      "name": "Adobe Creative Cloud",
+      "version": "6.9.0.618.1",
+      "publisher": "Adobe Inc.",
+      "install_location": "",
+      "uninstall_string": "C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud\\Utils\\Creative Cloud Uninstaller.exe",
+      "estimated_size_mb": 808
+    },
+    {
+      "name": "Adobe Genuine Service",
+      "version": "9.1.0.52",
+      "publisher": "Adobe Inc.",
+      "install_location": "",
+      "uninstall_string": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AdobeCleanUpUtility.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Adobe Illustrator 2020",
+      "version": "24.0",
+      "publisher": "Adobe Systems Incorporated",
+      "install_location": "C:\\软件\\AI\\Adobe Illustrator 2020",
+      "uninstall_string": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\HDBox\\Uninstaller.exe\" --uninstall=1 --sapCode=ILST --productVersion=24.0 --productPlatform=win64 --productAdobeCode={ILST-24.0-64-ADBEADBEADBEADBEADBEADB} --productName=\"Illustrator\" --mode=1",
+      "estimated_size_mb": 1217
+    },
+    {
+      "name": "Adobe Media Encoder 2020",
+      "version": "14.0",
+      "publisher": "Adobe Inc.",
+      "install_location": "C:\\软件\\AME",
+      "uninstall_string": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\HDBox\\Uninstaller.exe\" --uninstall=1 --sapCode=AME --productVersion=14.0 --productPlatform=win64 --productAdobeCode={AME-14.0-64-ADBEADBEADBEADBEADBEADBE} --productName=\"Media Encoder\" --mode=1",
+      "estimated_size_mb": 2597
+    },
+    {
+      "name": "Adobe Photoshop 2020",
+      "version": "21.0",
+      "publisher": "Adobe Systems Incorporated",
+      "install_location": "C:\\软件\\PS\\Adobe Photoshop 2020",
+      "uninstall_string": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\HDBox\\Uninstaller.exe\" --uninstall=1 --sapCode=PHSP --productVersion=21.0 --productPlatform=win64 --productAdobeCode={PHSP-21.0-64-ADBEADBEADBEADBEADBEADB} --productName=\"Photoshop\" --mode=1",
+      "estimated_size_mb": 2462
+    },
+    {
+      "name": "AntiCheatExpert",
+      "version": "24.0.2510.827",
+      "publisher": "",
+      "install_location": "C:\\Program Files\\AntiCheatExpert",
+      "uninstall_string": "C:\\Program Files\\AntiCheatExpert\\Uninstaller.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Bambu Studio",
+      "version": "02.04.00.70",
+      "publisher": "Bambulab",
+      "install_location": "",
+      "uninstall_string": "C:\\软件\\拓竹\\Bambu Studio\\Uninstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Blender",
+      "version": "5.0.1",
+      "publisher": "Blender Foundation",
+      "install_location": "C:\\软件\\blender\\",
+      "uninstall_string": "MsiExec.exe /X{3AB2F4C8-50AE-4B37-A795-72780C8CE90D}",
+      "estimated_size_mb": 919
+    },
+    {
+      "name": "Box开播组件",
+      "version": "",
+      "publisher": "Tencent WeGame",
+      "install_location": "",
+      "uninstall_string": "C:\\游戏\\WeGame\\apps\\es_brd\\Box开播组件卸载.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Corel Graphics - Windows Shell Extension",
+      "version": "22.0.0.411",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\Program Files\\Common Files\\Corel\\Shared\\Shell Extension\\",
+      "uninstall_string": "c:\\Program Files\\Common Files\\Corel\\Shared\\Shell Extension\\x64\\ShellUninst.exe -ProductCode {4F36AC9B-954C-4C49-8573-D2A9EF8079B4} -arp",
+      "estimated_size_mb": 2
+    },
+    {
+      "name": "Corel Graphics - Windows Shell Extension 32 Bit Keys",
+      "version": "22.0.411",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\Program Files\\Common Files\\Corel\\Shared\\Shell Extension\\",
+      "uninstall_string": "MsiExec.exe /I{C28C908E-0E70-470C-B556-DFDDE9973766}",
+      "estimated_size_mb": 2
+    },
+    {
+      "name": "Corel Update Manager",
+      "version": "2.12.582",
+      "publisher": "Corel corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "",
+      "estimated_size_mb": 47
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "",
+      "estimated_size_mb": 4
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 (64-Bit)",
+      "version": "22.0.0.412",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "c:\\软件\\CorelDRAW Graphics Suite 2020\\Setup\\SetupARP.exe /arp",
+      "estimated_size_mb": 1858
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Capture (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 3
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Common (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 620
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Connect (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 17
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - CS (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 44
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - CT (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 46
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Custom Data (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 38
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Discovery (x64)",
+      "version": "22.0.1",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 30
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Draw (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 81
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - EN (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 19
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Filters (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 56
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Font Manager (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 3
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - IPM (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "MsiExec.exe /I{0E0F6EBF-E2BA-4B1A-ADEC-CAF4612B2AC7}",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - IPM Content CS (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "MsiExec.exe /I{EFAB3BB7-4DD2-428F-B895-F915A689B46B}",
+      "estimated_size_mb": 4
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - IPM Content CT (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "MsiExec.exe /I{54DADE81-4911-41B9-9FA6-76C57647FB34}",
+      "estimated_size_mb": 8
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - IPM Content EN (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "MsiExec.exe /I{C796DB48-473A-4F12-998D-0D690570D633}",
+      "estimated_size_mb": 8
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Models (x64)",
+      "version": "22.0.1",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 134
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - PHOTO-PAINT (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 9
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Setup Files (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 37
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - VBA (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Workspaces (x64)",
+      "version": "22.0",
+      "publisher": "Corel Corporation",
+      "install_location": "",
+      "uninstall_string": "",
+      "estimated_size_mb": 2
+    },
+    {
+      "name": "CorelDRAW Graphics Suite 2020 - Writing Tools (x64)",
+      "version": "22.0",
+      "publisher": " Corel Corporation",
+      "install_location": "c:\\软件\\CorelDRAW Graphics Suite 2020\\",
+      "uninstall_string": "MsiExec.exe /I{F404C086-454C-4485-B5F1-F3C11B8DF452}",
+      "estimated_size_mb": 35
+    },
+    {
+      "name": "Cursor (User)",
+      "version": "3.1.17",
+      "publisher": "Anysphere",
+      "install_location": "C:\\软件\\cursor\\",
+      "uninstall_string": "\"C:\\软件\\cursor\\unins000.exe\"",
+      "estimated_size_mb": 1044
+    },
+    {
+      "name": "FormatFactory",
+      "version": "4.5.5.0",
+      "publisher": "FreeTime",
+      "install_location": "",
+      "uninstall_string": "C:\\软件\\FormatFactory\\UnInstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Ghostscript GPL 8.64 (Msi Setup)",
+      "version": "8.64",
+      "publisher": "Corel Corporation",
+      "install_location": "c:\\Program Files (x86)\\gs\\gs8.64\\",
+      "uninstall_string": "c:\\Program Files (x86)\\gs\\gs8.64\\GPLUninst.exe -ProductCode {06CD45E6-FF5E-4D8E-BC01-B276A90DADF2} -arp",
+      "estimated_size_mb": 22
+    },
+    {
+      "name": "Git",
+      "version": "2.45.1",
+      "publisher": "The Git Development Community",
+      "install_location": "C:\\Program Files\\Git\\",
+      "uninstall_string": "\"C:\\Program Files\\Git\\unins000.exe\"",
+      "estimated_size_mb": 338
+    },
+    {
+      "name": "Google Chrome",
+      "version": "147.0.7727.138",
+      "publisher": "Google LLC",
+      "install_location": "C:\\Program Files\\Google\\Chrome\\Application",
+      "uninstall_string": "\"C:\\Program Files\\Google\\Chrome\\Application\\147.0.7727.138\\Installer\\setup.exe\" --uninstall --channel=stable --system-level --verbose-logging",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Maxon Cinema 4D R21",
+      "version": "R21",
+      "publisher": "Maxon",
+      "install_location": "C:\\Program Files\\Maxon Cinema 4D R21",
+      "uninstall_string": "\"C:\\Program Files\\Maxon Cinema 4D R21\\uninstall.exe\"",
+      "estimated_size_mb": 800
+    },
+    {
+      "name": "Microsoft DirectX Managed Assemblies",
+      "version": "1.1",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "rundll32.exe advpack.dll,LaunchINFSection DXmngd.inf,Uninstall",
+      "estimated_size_mb": 39
+    },
+    {
+      "name": "Microsoft Update Health Tools",
+      "version": "3.74.0.0",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /X{1FC1A6C2-576E-489A-9B4A-92D21F542136}",
+      "estimated_size_mb": 1
+    },
+    {
+      "name": "Microsoft Visual Basic for Applications 7.1 (x64)",
+      "version": "7.1.00.00",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{90120064-0070-0000-0000-4000000FF1CE}",
+      "estimated_size_mb": 13
+    },
+    {
+      "name": "Microsoft Visual Basic for Applications 7.1 (x64) Chinese (Simplified)",
+      "version": "7.1.0.0",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{90F60804-7000-11D3-8CFE-0150048383C9}",
+      "estimated_size_mb": 6
+    },
+    {
+      "name": "Microsoft Visual Basic for Applications 7.1 (x64) English",
+      "version": "7.1.0.0",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{90F60409-7000-11D3-8CFE-0150048383C9}",
+      "estimated_size_mb": 4
+    },
+    {
+      "name": "Microsoft Visual Studio Tools for Applications 2019",
+      "version": "16.0.28801",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "\"C:\\ProgramData\\Package Cache\\{1edcd8d2-905a-4e93-bfdf-92ed5601528a}\\vsta_setup.exe\"  /uninstall",
+      "estimated_size_mb": 16
+    },
+    {
+      "name": "Microsoft Visual Studio Tools for Applications 2019 x64 Hosting Support",
+      "version": "16.0.28801",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /X{9D6CE289-E12C-38BB-9999-E2377EC118B7}",
+      "estimated_size_mb": 2
+    },
+    {
+      "name": "Microsoft Visual Studio Tools for Applications 2019 x86 Hosting Support",
+      "version": "16.0.28801",
+      "publisher": "Microsoft Corporation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /X{7C931D41-F302-3494-868C-320A4F4DD9F9}",
+      "estimated_size_mb": 3
+    },
+    {
+      "name": "NVIDIA Install Application",
+      "version": "2.1002.418.0",
+      "publisher": "NVIDIA Corporation",
+      "install_location": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\InstallerCore",
+      "uninstall_string": "",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "NVIDIA 图形驱动程序 560.94",
+      "version": "560.94",
+      "publisher": "NVIDIA Corporation",
+      "install_location": "C:\\Program Files\\NVIDIA Corporation\\Installer2\\Display.Driver.{5DA7CD79-3EE1-40B2-B50A-3509683A9A3F}",
+      "uninstall_string": "\"C:\\Windows\\SysWOW64\\RunDll32.EXE\" \"C:\\Program Files\\NVIDIA Corporation\\Installer2\\InstallerCore\\NVI2.DLL\",UninstallPackage Display.Driver",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "PotPlayer-64 bit",
+      "version": "26.04.01.0",
+      "publisher": "Kakao Corp.",
+      "install_location": "",
+      "uninstall_string": "C:\\软件\\PotPlayer\\uninstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "PyCharm 2025.3.1",
+      "version": "253.29346.142",
+      "publisher": "JetBrains s.r.o.",
+      "install_location": "C:\\软件\\PyCharm 2025.3.1",
+      "uninstall_string": "\"C:\\软件\\PyCharm 2025.3.1\\bin\\Uninstall.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Python 3.14.2 (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Local\\Package Cache\\{0ef3959c-4dd0-4cd2-9d49-307eaf0a2bff}\\python-3.14.2-amd64.exe\"  /uninstall",
+      "estimated_size_mb": 168
+    },
+    {
+      "name": "Python 3.14.2 Add to Path (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{4B91344F-511C-4064-90AC-D3A106A6A19F}",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Python 3.14.2 Core Interpreter (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{EF39D56D-D2F1-4D1E-87EF-6D3FC9EF4D5D}",
+      "estimated_size_mb": 6
+    },
+    {
+      "name": "Python 3.14.2 Development Libraries (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{78EB2837-5DCC-42E9-913A-91D0775038C6}",
+      "estimated_size_mb": 3
+    },
+    {
+      "name": "Python 3.14.2 Documentation (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{123A1B2C-D913-4500-BF5B-37D6A9BEB108}",
+      "estimated_size_mb": 62
+    },
+    {
+      "name": "Python 3.14.2 Executables (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{4827DB7C-EA57-4B8F-B5E8-80F2B368003D}",
+      "estimated_size_mb": 2
+    },
+    {
+      "name": "Python 3.14.2 pip Bootstrap (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{B629CC25-B4E0-4A9E-99C9-216A14F4144A}",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Python 3.14.2 Standard Library (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{FDF326B0-ECA5-42EC-9125-7F5ACD5995B8}",
+      "estimated_size_mb": 23
+    },
+    {
+      "name": "Python 3.14.2 Tcl/Tk Support (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{24994863-C156-4E42-8FF6-F17D4773092E}",
+      "estimated_size_mb": 13
+    },
+    {
+      "name": "Python 3.14.2 Test Suite (64-bit)",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /I{F2FCB28C-F751-4F4C-A9B4-E1A70DDDADCD}",
+      "estimated_size_mb": 34
+    },
+    {
+      "name": "Python Launcher",
+      "version": "3.14.2150.0",
+      "publisher": "Python Software Foundation",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /X{9B55B41C-B3DB-4778-B9ED-443EFF0D721A}",
+      "estimated_size_mb": 1
+    },
+    {
+      "name": "QQ",
+      "version": "9.9.25.42941",
+      "publisher": "腾讯科技(深圳)有限公司",
+      "install_location": "",
+      "uninstall_string": "\"C:\\软件\\QQ\\Uninstall.exe\"",
+      "estimated_size_mb": 998
+    },
+    {
+      "name": "QQ音乐",
+      "version": "19.51",
+      "publisher": "腾讯科技（深圳）有限公司",
+      "install_location": "C:\\软件\\qq音乐\\QQMusic\\QQMusic1951.22.48.55",
+      "uninstall_string": "C:\\软件\\qq音乐\\QQMusic\\QQMusic1951.22.48.55\\QQMusicUninst.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Spotify",
+      "version": "1.2.81.264.gb4ad4efa",
+      "publisher": "Spotify AB",
+      "install_location": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe\" /uninstall",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "ToDesk",
+      "version": "4.8.8.1",
+      "publisher": "Hainan YouQu Technology Co., Ltd",
+      "install_location": "",
+      "uninstall_string": "C:\\软件\\todesk\\uninst.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "UE4 Prerequisites (x64)",
+      "version": "1.0.11.0",
+      "publisher": "Epic Games, Inc.",
+      "install_location": "",
+      "uninstall_string": "MsiExec.exe /X{F9EC45F9-074A-48BF-92E9-A8CADD56F693}",
+      "estimated_size_mb": 3
+    },
+    {
+      "name": "UGREEN NAS",
+      "version": "1.14.0",
+      "publisher": "Ugreen Group Limited",
+      "install_location": "",
+      "uninstall_string": "\"C:\\软件\\NAS\\UGREEN NAS\\Uninstall UGREEN NAS.exe\" /allusers",
+      "estimated_size_mb": 635
+    },
+    {
+      "name": "WeGame",
+      "version": "",
+      "publisher": "WeGame",
+      "install_location": "",
+      "uninstall_string": "C:\\游戏\\WeGame\\uninstall_complete.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Windows 驱动程序包 - Advanced Micro Devices (AMDPCIDev) System  (03/26/2024 1.0.0.90)",
+      "version": "03/26/2024 1.0.0.90",
+      "publisher": "Advanced Micro Devices",
+      "install_location": "",
+      "uninstall_string": "C:\\PROGRA~1\\DIFX\\76D870E169D143A2\\dpinst64.exe /u C:\\Windows\\System32\\DriverStore\\FileRepository\\amdpcidev.inf_amd64_66bc24b429f59b67\\amdpcidev.inf",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Windows 驱动程序包 - Advanced Micro Devices, Inc (amdgpio2) System  (08/20/2024 2.2.0.134)",
+      "version": "08/20/2024 2.2.0.134",
+      "publisher": "Advanced Micro Devices, Inc",
+      "install_location": "",
+      "uninstall_string": "C:\\PROGRA~1\\DIFX\\76D870E169D143A2\\dpinst64.exe /u C:\\Windows\\System32\\DriverStore\\FileRepository\\amdgpio2.inf_amd64_a3ca1407d6201def\\amdgpio2.inf",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "Windows 驱动程序包 - Advanced Micro Devices, Inc System  (03/26/2024 5.12.0.44)",
+      "version": "03/26/2024 5.12.0.44",
+      "publisher": "Advanced Micro Devices, Inc",
+      "install_location": "",
+      "uninstall_string": "C:\\PROGRA~1\\DIFX\\76D870E169D143A2\\dpinst64.exe /u C:\\Windows\\System32\\DriverStore\\FileRepository\\smbusamd.inf_amd64_5633178178ba68f8\\smbusamd.inf",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "WPS Office (12.1.0.25865)",
+      "version": "12.1.0.25865",
+      "publisher": "Kingsoft Corp.",
+      "install_location": "",
+      "uninstall_string": "C:\\Users\\Administrator\\AppData\\Local\\Kingsoft\\WPS Office\\12.1.0.25865\\utility\\uninst.exe",
+      "estimated_size_mb": 1268
+    },
+    {
+      "name": "三角洲行动",
+      "version": "",
+      "publisher": "腾讯",
+      "install_location": "",
+      "uninstall_string": "E:\\WeGameApps\\rail_apps\\DeltaForce(2001918)\\三角洲行动卸载.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "三角洲行动助手",
+      "version": "",
+      "publisher": "Tencent WeGame",
+      "install_location": "",
+      "uninstall_string": "C:\\游戏\\WeGame\\apps\\df\\三角洲行动助手卸载.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "中国建设银行E路护航网银安全组件 3.5.0.9",
+      "version": "3.5.0.9",
+      "publisher": "China Construction Bank",
+      "install_location": "",
+      "uninstall_string": "\"C:\\Program Files (x86)\\CCBComponents\\Uninstall.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "人行征信中心密码控件非插件版",
+      "version": "1.0.0.7",
+      "publisher": "中国人民银行征信中心",
+      "install_location": "",
+      "uninstall_string": "C:\\Windows\\SysWoW64\\PBCCRCNew\\uninst.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "剪映专业版",
+      "version": "10.5.0.13988",
+      "publisher": "Shenzhen Lianmeng Technology",
+      "install_location": "",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Local\\JianyingPro\\Apps\\uninst.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "千牛工作台",
+      "version": "9.90.00N",
+      "publisher": "阿里巴巴（中国）有限公司",
+      "install_location": "C:\\软件\\千牛",
+      "uninstall_string": "C:\\软件\\千牛\\Uninstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "卸载EPSON L4160 Series打印机",
+      "version": "",
+      "publisher": "Seiko Epson Corporation",
+      "install_location": "",
+      "uninstall_string": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YINSSME.EXE /R /APD /P:\"EPSON L4160 Series\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "向日葵远程控制",
+      "version": "16.1.0.26218",
+      "publisher": "上海贝锐信息科技股份有限公司",
+      "install_location": "C:\\软件\\向日葵\\AweSun",
+      "uninstall_string": "C:\\软件\\向日葵\\AweSun\\AweSun.exe --mod=uninstall",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "夸克",
+      "version": "6.7.5.823",
+      "publisher": "广州市动悦信息技术有限公司",
+      "install_location": "C:\\软件\\Quark",
+      "uninstall_string": "\"C:\\软件\\Quark\\unins000.exe\" --brand-quark /SILENT --fake-silent /LOG",
+      "estimated_size_mb": 909
+    },
+    {
+      "name": "好压 - 2345",
+      "version": "v6.5",
+      "publisher": "2345移动科技",
+      "install_location": "",
+      "uninstall_string": "C:\\软件\\Haozip\\Uninstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "小红书直播助手 v3.24.1",
+      "version": "3.24.1",
+      "publisher": "行吟信息科技（上海）有限公司",
+      "install_location": "",
+      "uninstall_string": "\"C:\\软件\\直播助手\\xhs-live-helper\\Uninstall xhs-live-helper.exe\" /allusers",
+      "estimated_size_mb": 674
+    },
+    {
+      "name": "微信",
+      "version": "4.1.8.107",
+      "publisher": "腾讯科技(深圳)有限公司",
+      "install_location": "\"C:\\Program Files\\Tencent\\Weixin\"",
+      "uninstall_string": "\"C:\\Program Files\\Tencent\\Weixin\\Uninstall.exe\"",
+      "estimated_size_mb": 784
+    },
+    {
+      "name": "微信输入法",
+      "version": "1.4.3.9",
+      "publisher": "腾讯科技(深圳)有限公司",
+      "install_location": "C:\\Program Files\\Tencent\\WeType",
+      "uninstall_string": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\Uninstall.exe",
+      "estimated_size_mb": 421
+    },
+    {
+      "name": "汽水音乐",
+      "version": "3.1.2",
+      "publisher": "Beijing Douyin Technology Co., Ltd.",
+      "install_location": "C:\\软件\\汽水\\Soda Music",
+      "uninstall_string": "\"C:\\软件\\汽水\\Soda Music\\unins000.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "百度网盘",
+      "version": "8.3.9",
+      "publisher": "北京度友科技有限公司",
+      "install_location": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\uninst.exe\"",
+      "estimated_size_mb": 1055
+    },
+    {
+      "name": "看图王 - 2345",
+      "version": "v13.4",
+      "publisher": "2345移动科技",
+      "install_location": "",
+      "uninstall_string": "C:\\Program Files\\2345Soft\\2345Pic\\Uninstall.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "腾讯会议",
+      "version": "3.42.3.424",
+      "publisher": "腾讯科技(深圳)有限公司",
+      "install_location": "\"C:\\软件\\腾讯会议\\WeMeet\\3.42.3.424\"",
+      "uninstall_string": "\"C:\\软件\\腾讯会议\\WeMeet\\3.42.3.424\\WeMeetUninstall.exe\"",
+      "estimated_size_mb": 776
+    },
+    {
+      "name": "腾讯电脑管家",
+      "version": "18.0.29898.211",
+      "publisher": "腾讯科技(深圳)有限公司",
+      "install_location": "",
+      "uninstall_string": "\"C:\\软件\\电脑管家\\QQPCMgr\\18.0.29898.211\\Uninst.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "英雄联盟",
+      "version": "",
+      "publisher": "Tencent",
+      "install_location": "",
+      "uninstall_string": "C:\\WeGameApps\\英雄联盟\\英雄联盟卸载.exe",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "豆包",
+      "version": "1.42.6",
+      "publisher": "Beijing Chuntian Zhiyun Technology Co., Ltd.",
+      "install_location": "",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Local\\Doubao\\Application\\uninstall.exe\"",
+      "estimated_size_mb": 0
+    },
+    {
+      "name": "龙信浏览器",
+      "version": "1.0.0.50",
+      "publisher": "360安全中心",
+      "install_location": "C:\\Users\\Administrator\\AppData\\Roaming\\bankebrowser\\Application",
+      "uninstall_string": "\"C:\\Users\\Administrator\\AppData\\Roaming\\bankebrowser\\Application\\1.0.0.50\\Installer\\setup.exe\" --uninstall",
+      "estimated_size_mb": 174
+    }
+  ],
+  "software_usage": {
+    "pycharm64.exe": {
+      "display_name": "PyCharm",
+      "process_name": "pycharm64.exe",
+      "run_count": 4,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 2017.1,
+      "avg_memory_mb": 2012.1,
+      "total_memory_mb": 8048.3,
+      "category": "开发工具"
+    },
+    "explorer.exe": {
+      "display_name": "Explorer",
+      "process_name": "explorer.exe",
+      "run_count": 4,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 1657.5,
+      "avg_memory_mb": 1647.9,
+      "total_memory_mb": 6591.6,
+      "category": "系统/驱动"
+    },
+    "weixin.exe": {
+      "display_name": "微信",
+      "process_name": "Weixin.exe",
+      "run_count": 4,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 705.9,
+      "avg_memory_mb": 705.8,
+      "total_memory_mb": 2823.0,
+      "category": "聊天软件"
+    },
+    "chrome.exe": {
+      "display_name": "Chrome",
+      "process_name": "chrome.exe",
+      "run_count": 7,
+      "last_seen": "2026-05-09 05:14:14",
+      "max_memory_mb": 672.3,
+      "avg_memory_mb": 443.3,
+      "total_memory_mb": 3103.4,
+      "category": "浏览器多进程"
+    },
+    "codex.exe": {
+      "display_name": "Codex",
+      "process_name": "Codex.exe",
+      "run_count": 13,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 706.7,
+      "avg_memory_mb": 419.8,
+      "total_memory_mb": 5457.6,
+      "category": "系统/驱动"
+    },
+    "searchapp.exe": {
+      "display_name": "Searchapp",
+      "process_name": "SearchApp.exe",
+      "run_count": 6,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 451.8,
+      "avg_memory_mb": 359.9,
+      "total_memory_mb": 2159.3,
+      "category": "系统/驱动"
+    },
+    "wegame.exe": {
+      "display_name": "Wegame",
+      "process_name": "wegame.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 447.7,
+      "avg_memory_mb": 447.7,
+      "total_memory_mb": 1343.1,
+      "category": "正在使用"
+    },
+    "ugreen nas.exe": {
+      "display_name": "Ugreen nas",
+      "process_name": "UGREEN NAS.exe",
+      "run_count": 9,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 438.4,
+      "avg_memory_mb": 312.4,
+      "total_memory_mb": 2812.0,
+      "category": "正在使用"
+    },
+    "aliworkbench.exe": {
+      "display_name": "Aliworkbench",
+      "process_name": "AliWorkbench.exe",
+      "run_count": 10,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 356.0,
+      "avg_memory_mb": 295.9,
+      "total_memory_mb": 2959.4,
+      "category": "正在使用"
+    },
+    "wechatappex.exe": {
+      "display_name": "微信",
+      "process_name": "WeChatAppEx.exe",
+      "run_count": 12,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 343.1,
+      "avg_memory_mb": 272.4,
+      "total_memory_mb": 3268.5,
+      "category": "聊天软件"
+    },
+    "qq.exe": {
+      "display_name": "QQ",
+      "process_name": "QQ.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 340.2,
+      "avg_memory_mb": 340.2,
+      "total_memory_mb": 1020.6,
+      "category": "聊天软件"
+    },
+    "baidunetdiskunite.exe": {
+      "display_name": "百度网盘",
+      "process_name": "BaiduNetdiskUnite.exe",
+      "run_count": 9,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 322.0,
+      "avg_memory_mb": 253.8,
+      "total_memory_mb": 2284.4,
+      "category": "浏览器"
+    },
+    "sodamusic.exe": {
+      "display_name": "Sodamusic",
+      "process_name": "SodaMusic.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 317.2,
+      "avg_memory_mb": 317.2,
+      "total_memory_mb": 951.6,
+      "category": "正在使用"
+    },
+    "alirender.exe": {
+      "display_name": "Alirender",
+      "process_name": "AliRender.exe",
+      "run_count": 40,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 297.8,
+      "avg_memory_mb": 242.6,
+      "total_memory_mb": 9702.0,
+      "category": "正在使用"
+    },
+    "dwm.exe": {
+      "display_name": "Dwm",
+      "process_name": "dwm.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 290.0,
+      "avg_memory_mb": 284.5,
+      "total_memory_mb": 853.4,
+      "category": "系统/驱动"
+    },
+    "078助手.exe": {
+      "display_name": "078助手",
+      "process_name": "078助手.exe",
+      "run_count": 6,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 273.7,
+      "avg_memory_mb": 243.3,
+      "total_memory_mb": 1459.6,
+      "category": "正在使用"
+    },
+    "wetype_server.exe": {
+      "display_name": "Wetype_server",
+      "process_name": "wetype_server.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 270.4,
+      "avg_memory_mb": 267.3,
+      "total_memory_mb": 802.0,
+      "category": "正在使用"
+    },
+    "creative cloud ui helper.exe": {
+      "display_name": "Creative cloud ui helper",
+      "process_name": "Creative Cloud UI Helper.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 255.6,
+      "avg_memory_mb": 255.6,
+      "total_memory_mb": 766.8,
+      "category": "后台常驻"
+    },
+    "creative cloud.exe": {
+      "display_name": "Creative cloud",
+      "process_name": "Creative Cloud.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 229.8,
+      "avg_memory_mb": 229.7,
+      "total_memory_mb": 689.1,
+      "category": "后台常驻"
+    },
+    "shellexperiencehost.exe": {
+      "display_name": "Shellexperiencehost",
+      "process_name": "ShellExperienceHost.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 216.3,
+      "avg_memory_mb": 215.7,
+      "total_memory_mb": 647.1,
+      "category": "系统/驱动"
+    },
+    "adobe desktop service.exe": {
+      "display_name": "Adobe desktop service",
+      "process_name": "Adobe Desktop Service.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 214.8,
+      "avg_memory_mb": 214.8,
+      "total_memory_mb": 644.4,
+      "category": "后台常驻"
+    },
+    "wetype_update.exe": {
+      "display_name": "Wetype_update",
+      "process_name": "wetype_update.exe",
+      "run_count": 3,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 208.3,
+      "avg_memory_mb": 208.3,
+      "total_memory_mb": 624.9,
+      "category": "后台常驻"
+    },
+    "powershell.exe": {
+      "display_name": "Powershell",
+      "process_name": "powershell.exe",
+      "run_count": 1,
+      "last_seen": "2026-05-09 05:32:29",
+      "max_memory_mb": 219.7,
+      "avg_memory_mb": 219.7,
+      "total_memory_mb": 219.7,
+      "category": "系统/驱动"
+    }
+  },
+  "user_software_profile": [
+    {
+      "name": "Codex",
+      "category": "系统/驱动",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "Codex.exe 正在运行",
+        "codex.exe 正在运行",
+        "历史扫描出现 13 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 706.7,
+      "usage_score": 100
+    },
+    {
+      "name": "微信",
+      "category": "聊天软件",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "开机自启动",
+        "正在运行"
+      ],
+      "evidence": [
+        "Weixin.exe 正在运行",
+        "WeChatAppEx.exe 正在运行",
+        "开机自启动",
+        "历史扫描出现 4 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 705.9,
+      "usage_score": 100
+    },
+    {
+      "name": "Ugreen nas",
+      "category": "正在使用",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "UGREEN NAS.exe 正在运行",
+        "历史扫描出现 9 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 438.4,
+      "usage_score": 100
+    },
+    {
+      "name": "百度网盘",
+      "category": "浏览器",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "开机自启动",
+        "正在运行"
+      ],
+      "evidence": [
+        "BaiduNetdiskUnite.exe 正在运行",
+        "开机自启动",
+        "历史扫描出现 9 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 322.0,
+      "usage_score": 100
+    },
+    {
+      "name": "Alirender",
+      "category": "正在使用",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "AliRender.exe 正在运行",
+        "历史扫描出现 40 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 297.8,
+      "usage_score": 100
+    },
+    {
+      "name": "Aliworkbench",
+      "category": "正在使用",
+      "common_score": 100,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "AliWorkbench.exe 正在运行",
+        "历史扫描出现 10 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 356.0,
+      "usage_score": 100
+    },
+    {
+      "name": "CorelDRAW",
+      "category": "普通软件",
+      "common_score": 100,
+      "sources": [
+        "已安装"
+      ],
+      "evidence": [
+        "已安装"
+      ],
+      "last_seen": "",
+      "publisher": " Corel Corporation",
+      "max_memory_mb": 0,
+      "usage_score": 100
+    },
+    {
+      "name": "Searchapp",
+      "category": "系统/驱动",
+      "common_score": 98,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "SearchApp.exe 正在运行",
+        "历史扫描出现 6 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 451.8,
+      "usage_score": 98
+    },
+    {
+      "name": "078助手",
+      "category": "正在使用",
+      "common_score": 98,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "078助手.exe 正在运行",
+        "历史扫描出现 6 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 273.7,
+      "usage_score": 98
+    },
+    {
+      "name": "QQ",
+      "category": "聊天软件",
+      "common_score": 93,
+      "sources": [
+        "历史扫描",
+        "已安装",
+        "开机自启动",
+        "正在运行"
+      ],
+      "evidence": [
+        "QQ.exe 正在运行",
+        "已安装",
+        "开机自启动",
+        "历史扫描出现 3 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "腾讯科技（深圳）有限公司",
+      "max_memory_mb": 340.2,
+      "usage_score": 93
+    },
+    {
+      "name": "PyCharm",
+      "category": "开发工具",
+      "common_score": 68,
+      "sources": [
+        "历史扫描",
+        "已安装",
+        "正在运行"
+      ],
+      "evidence": [
+        "pycharm64.exe 正在运行",
+        "已安装",
+        "历史扫描出现 4 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "JetBrains s.r.o.",
+      "max_memory_mb": 2017.1,
+      "usage_score": 68
+    },
+    {
+      "name": "Explorer",
+      "category": "系统/驱动",
+      "common_score": 55,
+      "sources": [
+        "历史扫描",
+        "正在运行"
+      ],
+      "evidence": [
+        "explorer.exe 正在运行",
+        "历史扫描出现 4 次"
+      ],
+      "last_seen": "2026-05-09 05:32:29",
+      "publisher": "",
+      "max_memory_mb": 1657.5,
+      "usage_score": 55
+    }
+  ],
+  "windows_settings": {
+    "summary": "发现 1 个 Windows 设置建议关注。",
+    "items": [
+      {
+        "name": "电源模式",
+        "value": "Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+        "level": "ok",
+        "impact": "节能模式可能限制 CPU 性能，设计、剪辑、开发时会更明显。",
+        "suggestion": "需要高性能工作时，可切换到平衡或高性能。不要长期盲目改系统服务。"
+      },
+      {
+        "name": "休眠",
+        "value": "已关闭",
+        "level": "ok",
+        "impact": "休眠文件会占用一部分 C 盘空间，但也支持休眠/快速启动能力。",
+        "suggestion": "空间极度紧张时再考虑关闭；普通用户不建议为了省一点空间乱改。"
+      },
+      {
+        "name": "快速启动",
+        "value": "已关闭",
+        "level": "ok",
+        "impact": "快速启动通常能加快开机，但偶尔会让驱动状态长期保留。",
+        "suggestion": "如果遇到设备异常，可尝试完整重启；不要随意批量修改电源策略。"
+      },
+      {
+        "name": "Windows 更新服务",
+        "value": "Running",
+        "level": "ok",
+        "impact": "更新服务异常可能导致更新卡住或长期后台重试。",
+        "suggestion": "如果更新长期失败，优先使用系统设置里的疑难解答，不建议直接删除更新目录。"
+      },
+      {
+        "name": "搜索索引",
+        "value": "未知",
+        "level": "unknown",
+        "impact": "索引服务在首次建立索引或文件很多时可能有短时占用。",
+        "suggestion": "只有长期高占用时再调整索引范围，不建议直接关闭系统搜索。"
+      },
+      {
+        "name": "OneDrive 同步",
+        "value": "未检测到运行",
+        "level": "ok",
+        "impact": "同步桌面/文档时可能占用网络、磁盘和后台资源。",
+        "suggestion": "如果桌面文件很多且同步慢，建议检查 OneDrive 同步范围。"
+      }
+    ]
+  },
+  "stability_risk": {
+    "summary": "发现 3 个稳定性/风险关注项。",
+    "boot_time": "2026-05-05 17:37:41",
+    "uptime_hours": 83.9,
+    "risk_items": [
+      {
+        "name": "系统运行时长",
+        "status": "83.9 小时",
+        "level": "ok",
+        "suggestion": "长时间不重启时，建议先重启再判断是否仍然卡顿。"
+      },
+      {
+        "name": "内存长期压力",
+        "status": "当前占用 45.6%",
+        "level": "ok",
+        "suggestion": "长期超过 85% 时，优先减少后台或考虑升级内存。"
+      },
+      {
+        "name": "可疑启动项",
+        "status": "1 个",
+        "level": "warning",
+        "suggestion": "路径为空或位于 Temp 的启动项需要确认来源，先禁用观察，不要直接删除。"
+      },
+      {
+        "name": "硬盘健康",
+        "status": "未检测",
+        "level": "unknown",
+        "suggestion": "当前轻量版暂未读取 SMART，后续建议增加硬盘健康与温度检测。"
+      },
+      {
+        "name": "近 7 天系统错误",
+        "status": "20 条",
+        "level": "warning",
+        "suggestion": "错误较多时建议查看事件查看器，优先排查驱动、磁盘和更新相关错误。"
+      }
+    ]
+  },
+  "score": {
+    "total_score": 94,
+    "health_score": 100,
+    "optimization_score": 84,
+    "level": "excellent",
+    "display_level": "状态很好",
+    "sub_scores": {
+      "cpu_score": 10,
+      "memory_score": 20,
+      "disk_space_score": 20,
+      "process_score": 15,
+      "startup_score": 8,
+      "clean_score": 10,
+      "clutter_score": 1
+    }
+  },
+  "ip_status": {
+    "name": "happy",
+    "display_name": "状态很好",
+    "emotion": "happy",
+    "image": "assets/ip/happy.png",
+    "message": "电脑状态很棒，继续保持。"
+  },
+  "diagnosis": {
+    "main_issues": [],
+    "local_summary": "系统整体可用。"
+  },
+  "product": {
+    "six_dimensions": {
+      "space": {
+        "score": 82,
+        "status": "良好",
+        "summary": "C 盘空间基本够用，但缓存和用户目录建议整理。",
+        "evidence": [
+          "C盘剩余 618.5GB",
+          "安全/需确认可清理约 1.6GB",
+          "桌面/下载/文档约 113.2GB"
+        ],
+        "safe_clean": [
+          "Windows 临时文件",
+          "用户临时文件"
+        ],
+        "need_confirm": [
+          "回收站"
+        ],
+        "manual_review": [
+          "文档目录",
+          "桌面",
+          "Adobe 缓存",
+          "下载目录",
+          "QQ 文件",
+          "Chrome 缓存"
+        ]
+      },
+      "hardware": {
+        "score": 88,
+        "status": "良好",
+        "summary": "16 线程 CPU、39.9GB 内存，日常使用基本够用。",
+        "evidence": [
+          "CPU：AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD，16 线程",
+          "内存：39.9GB，当前占用 45.7%",
+          "显卡：NVIDIA GeForce RTX 3060"
+        ],
+        "gpu": [
+          {
+            "name": "NVIDIA GeForce RTX 3060",
+            "vram_gb": 12.0,
+            "driver_version": "560.94",
+            "temperature_c": 50.0,
+            "utilization_percent": 1.0,
+            "vendor": "NVIDIA",
+            "source": "nvidia-smi",
+            "status": "detected"
+          }
+        ]
+      },
+      "common_software": {
+        "score": 25,
+        "status": "需要尽快处理",
+        "summary": "识别到常用软件：Codex、微信、Ugreen nas、百度网盘、Alirender。",
+        "evidence": [
+          "高频/可能常用软件 12 个",
+          "需关注适配的软件 9 个",
+          "当前内存占用 45.7%"
+        ],
+        "items": [
+          {
+            "name": "Codex",
+            "category": "系统/驱动",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "Codex.exe 正在运行",
+              "codex.exe 正在运行",
+              "历史扫描出现 13 次"
+            ]
+          },
+          {
+            "name": "微信",
+            "category": "聊天社交",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 100,
+            "status": "流畅",
+            "level": "good",
+            "summary": "微信 跑起来比较稳。",
+            "hardware_match": {
+              "memory": "够用",
+              "cpu": "够用",
+              "disk": "够用",
+              "gpu": "不关键"
+            },
+            "bottleneck": "暂未发现明显硬件短板。",
+            "suggestion": "正常使用即可，定期扫描观察后台和空间。",
+            "evidence": [
+              "Weixin.exe 正在运行",
+              "WeChatAppEx.exe 正在运行",
+              "开机自启动",
+              "历史扫描出现 4 次"
+            ]
+          },
+          {
+            "name": "Ugreen nas",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "UGREEN NAS.exe 正在运行",
+              "历史扫描出现 9 次"
+            ]
+          },
+          {
+            "name": "百度网盘",
+            "category": "浏览器",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "BaiduNetdiskUnite.exe 正在运行",
+              "开机自启动",
+              "历史扫描出现 9 次"
+            ]
+          },
+          {
+            "name": "Alirender",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "AliRender.exe 正在运行",
+              "历史扫描出现 40 次"
+            ]
+          },
+          {
+            "name": "Aliworkbench",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "AliWorkbench.exe 正在运行",
+              "历史扫描出现 10 次"
+            ]
+          },
+          {
+            "name": "CorelDRAW",
+            "category": "普通软件",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "已安装"
+            ]
+          },
+          {
+            "name": "Searchapp",
+            "category": "系统/驱动",
+            "usage_score": 98,
+            "common_score": 98,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "SearchApp.exe 正在运行",
+              "历史扫描出现 6 次"
+            ]
+          },
+          {
+            "name": "078助手",
+            "category": "正在使用",
+            "usage_score": 98,
+            "common_score": 98,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "078助手.exe 正在运行",
+              "历史扫描出现 6 次"
+            ]
+          },
+          {
+            "name": "QQ",
+            "category": "聊天软件",
+            "usage_score": 93,
+            "common_score": 93,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "QQ.exe 正在运行",
+              "已安装",
+              "开机自启动",
+              "历史扫描出现 3 次"
+            ]
+          }
+        ]
+      },
+      "system_background": {
+        "score": 56,
+        "status": "需要整理",
+        "running_process_count": 50,
+        "startup_count": 14,
+        "suggest_disable_count": 4,
+        "suspicious_count": 4,
+        "summary": "检测到 14 个启动项，建议关闭 4 个非必要项。",
+        "evidence": [
+          "运行进程 50 个",
+          "高占用进程 0 个",
+          "可疑启动项 4 个"
+        ],
+        "items": [
+          {
+            "name": "sdstj",
+            "path": "",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "stat",
+            "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "360huabao",
+            "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "BaiduYunDetect",
+            "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "QQNT",
+            "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "聊天软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "BaiduYunGuanjia",
+            "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Weixin",
+            "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "聊天软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "CCXProcess",
+            "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "汽水音乐",
+            "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "EPLTarget\\P0000000000000000",
+            "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议保留",
+            "type": "普通软件",
+            "impact": "可能与驱动、安全或系统体验有关，建议保留。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Spotify",
+            "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "普通软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "com.lbyczf.clashwin",
+            "path": "C:\\Users\\Administrator\\Desktop\\不常用\\Clash\\Clash for Windows.exe",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+            "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+            "source": "HKLM Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "AdobeGCInvoker-1.0",
+            "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+            "source": "HKLM Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "设计软件组件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          }
+        ]
+      },
+      "windows_settings": {
+        "score": 81,
+        "status": "良好",
+        "summary": "发现 1 个 Windows 设置建议关注。",
+        "evidence": [
+          "电源模式：Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+          "休眠：已关闭",
+          "快速启动：已关闭"
+        ],
+        "items": [
+          {
+            "name": "电源模式",
+            "value": "Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+            "level": "ok",
+            "impact": "节能模式可能限制 CPU 性能，设计、剪辑、开发时会更明显。",
+            "suggestion": "需要高性能工作时，可切换到平衡或高性能。不要长期盲目改系统服务。"
+          },
+          {
+            "name": "休眠",
+            "value": "已关闭",
+            "level": "ok",
+            "impact": "休眠文件会占用一部分 C 盘空间，但也支持休眠/快速启动能力。",
+            "suggestion": "空间极度紧张时再考虑关闭；普通用户不建议为了省一点空间乱改。"
+          },
+          {
+            "name": "快速启动",
+            "value": "已关闭",
+            "level": "ok",
+            "impact": "快速启动通常能加快开机，但偶尔会让驱动状态长期保留。",
+            "suggestion": "如果遇到设备异常，可尝试完整重启；不要随意批量修改电源策略。"
+          },
+          {
+            "name": "Windows 更新服务",
+            "value": "Running",
+            "level": "ok",
+            "impact": "更新服务异常可能导致更新卡住或长期后台重试。",
+            "suggestion": "如果更新长期失败，优先使用系统设置里的疑难解答，不建议直接删除更新目录。"
+          },
+          {
+            "name": "搜索索引",
+            "value": "未知",
+            "level": "unknown",
+            "impact": "索引服务在首次建立索引或文件很多时可能有短时占用。",
+            "suggestion": "只有长期高占用时再调整索引范围，不建议直接关闭系统搜索。"
+          },
+          {
+            "name": "OneDrive 同步",
+            "value": "未检测到运行",
+            "level": "ok",
+            "impact": "同步桌面/文档时可能占用网络、磁盘和后台资源。",
+            "suggestion": "如果桌面文件很多且同步慢，建议检查 OneDrive 同步范围。"
+          }
+        ]
+      },
+      "stability_risk": {
+        "score": 62,
+        "status": "有点累",
+        "summary": "发现 3 个稳定性/风险关注项。",
+        "evidence": [
+          "系统运行时长：83.9 小时",
+          "内存长期压力：当前占用 45.6%",
+          "可疑启动项：1 个"
+        ],
+        "risk_items": [
+          {
+            "name": "系统运行时长",
+            "status": "83.9 小时",
+            "level": "ok",
+            "suggestion": "长时间不重启时，建议先重启再判断是否仍然卡顿。"
+          },
+          {
+            "name": "内存长期压力",
+            "status": "当前占用 45.6%",
+            "level": "ok",
+            "suggestion": "长期超过 85% 时，优先减少后台或考虑升级内存。"
+          },
+          {
+            "name": "可疑启动项",
+            "status": "1 个",
+            "level": "warning",
+            "suggestion": "路径为空或位于 Temp 的启动项需要确认来源，先禁用观察，不要直接删除。"
+          },
+          {
+            "name": "硬盘健康",
+            "status": "未检测",
+            "level": "unknown",
+            "suggestion": "当前轻量版暂未读取 SMART，后续建议增加硬盘健康与温度检测。"
+          },
+          {
+            "name": "近 7 天系统错误",
+            "status": "20 条",
+            "level": "warning",
+            "suggestion": "错误较多时建议查看事件查看器，优先排查驱动、磁盘和更新相关错误。"
+          }
+        ]
+      }
+    },
+    "four_dimension_score": {
+      "space": {
+        "score": 82,
+        "status": "良好",
+        "summary": "C 盘空间基本够用，但缓存和用户目录建议整理。",
+        "evidence": [
+          "C盘剩余 618.5GB",
+          "安全/需确认可清理约 1.6GB",
+          "桌面/下载/文档约 113.2GB"
+        ],
+        "safe_clean": [
+          "Windows 临时文件",
+          "用户临时文件"
+        ],
+        "need_confirm": [
+          "回收站"
+        ],
+        "manual_review": [
+          "文档目录",
+          "桌面",
+          "Adobe 缓存",
+          "下载目录",
+          "QQ 文件",
+          "Chrome 缓存"
+        ]
+      },
+      "hardware": {
+        "score": 88,
+        "status": "良好",
+        "summary": "16 线程 CPU、39.9GB 内存，日常使用基本够用。",
+        "evidence": [
+          "CPU：AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD，16 线程",
+          "内存：39.9GB，当前占用 45.7%",
+          "显卡：NVIDIA GeForce RTX 3060"
+        ],
+        "gpu": [
+          {
+            "name": "NVIDIA GeForce RTX 3060",
+            "vram_gb": 12.0,
+            "driver_version": "560.94",
+            "temperature_c": 50.0,
+            "utilization_percent": 1.0,
+            "vendor": "NVIDIA",
+            "source": "nvidia-smi",
+            "status": "detected"
+          }
+        ]
+      },
+      "common_software": {
+        "score": 25,
+        "status": "需要尽快处理",
+        "summary": "识别到常用软件：Codex、微信、Ugreen nas、百度网盘、Alirender。",
+        "evidence": [
+          "高频/可能常用软件 12 个",
+          "需关注适配的软件 9 个",
+          "当前内存占用 45.7%"
+        ],
+        "items": [
+          {
+            "name": "Codex",
+            "category": "系统/驱动",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "Codex.exe 正在运行",
+              "codex.exe 正在运行",
+              "历史扫描出现 13 次"
+            ]
+          },
+          {
+            "name": "微信",
+            "category": "聊天社交",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 100,
+            "status": "流畅",
+            "level": "good",
+            "summary": "微信 跑起来比较稳。",
+            "hardware_match": {
+              "memory": "够用",
+              "cpu": "够用",
+              "disk": "够用",
+              "gpu": "不关键"
+            },
+            "bottleneck": "暂未发现明显硬件短板。",
+            "suggestion": "正常使用即可，定期扫描观察后台和空间。",
+            "evidence": [
+              "Weixin.exe 正在运行",
+              "WeChatAppEx.exe 正在运行",
+              "开机自启动",
+              "历史扫描出现 4 次"
+            ]
+          },
+          {
+            "name": "Ugreen nas",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "UGREEN NAS.exe 正在运行",
+              "历史扫描出现 9 次"
+            ]
+          },
+          {
+            "name": "百度网盘",
+            "category": "浏览器",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "BaiduNetdiskUnite.exe 正在运行",
+              "开机自启动",
+              "历史扫描出现 9 次"
+            ]
+          },
+          {
+            "name": "Alirender",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "AliRender.exe 正在运行",
+              "历史扫描出现 40 次"
+            ]
+          },
+          {
+            "name": "Aliworkbench",
+            "category": "正在使用",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "AliWorkbench.exe 正在运行",
+              "历史扫描出现 10 次"
+            ]
+          },
+          {
+            "name": "CorelDRAW",
+            "category": "普通软件",
+            "usage_score": 100,
+            "common_score": 100,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "已安装"
+            ]
+          },
+          {
+            "name": "Searchapp",
+            "category": "系统/驱动",
+            "usage_score": 98,
+            "common_score": 98,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "SearchApp.exe 正在运行",
+              "历史扫描出现 6 次"
+            ]
+          },
+          {
+            "name": "078助手",
+            "category": "正在使用",
+            "usage_score": 98,
+            "common_score": 98,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "078助手.exe 正在运行",
+              "历史扫描出现 6 次"
+            ]
+          },
+          {
+            "name": "QQ",
+            "category": "聊天软件",
+            "usage_score": 93,
+            "common_score": 93,
+            "fit_score": 70,
+            "status": "需要观察",
+            "level": "medium",
+            "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+            "hardware_match": {
+              "cpu": "未知",
+              "memory": "未知",
+              "disk": "未知",
+              "gpu": "未知"
+            },
+            "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+            "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+            "evidence": [
+              "QQ.exe 正在运行",
+              "已安装",
+              "开机自启动",
+              "历史扫描出现 3 次"
+            ]
+          }
+        ]
+      },
+      "system_background": {
+        "score": 56,
+        "status": "需要整理",
+        "running_process_count": 50,
+        "startup_count": 14,
+        "suggest_disable_count": 4,
+        "suspicious_count": 4,
+        "summary": "检测到 14 个启动项，建议关闭 4 个非必要项。",
+        "evidence": [
+          "运行进程 50 个",
+          "高占用进程 0 个",
+          "可疑启动项 4 个"
+        ],
+        "items": [
+          {
+            "name": "sdstj",
+            "path": "",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "stat",
+            "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "360huabao",
+            "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "BaiduYunDetect",
+            "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "QQNT",
+            "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "聊天软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "BaiduYunGuanjia",
+            "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Weixin",
+            "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "聊天软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "CCXProcess",
+            "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "可疑项目",
+            "type": "普通软件",
+            "impact": "路径或名称不够明确，建议先确认来源。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "汽水音乐",
+            "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "EPLTarget\\P0000000000000000",
+            "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议保留",
+            "type": "普通软件",
+            "impact": "可能与驱动、安全或系统体验有关，建议保留。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Spotify",
+            "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "普通软件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "com.lbyczf.clashwin",
+            "path": "C:\\Users\\Administrator\\Desktop\\不常用\\Clash\\Clash for Windows.exe",
+            "source": "HKCU Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+            "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+            "source": "HKLM Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "未知项目",
+            "type": "普通软件",
+            "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          },
+          {
+            "name": "AdobeGCInvoker-1.0",
+            "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+            "source": "HKLM Run",
+            "status": "enabled",
+            "recommendation": "optional_disable",
+            "category": "建议关闭",
+            "type": "设计软件组件",
+            "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+            "buttons": [
+              "禁用",
+              "打开位置",
+              "复制路径"
+            ]
+          }
+        ]
+      },
+      "windows_settings": {
+        "score": 81,
+        "status": "良好",
+        "summary": "发现 1 个 Windows 设置建议关注。",
+        "evidence": [
+          "电源模式：Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+          "休眠：已关闭",
+          "快速启动：已关闭"
+        ],
+        "items": [
+          {
+            "name": "电源模式",
+            "value": "Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+            "level": "ok",
+            "impact": "节能模式可能限制 CPU 性能，设计、剪辑、开发时会更明显。",
+            "suggestion": "需要高性能工作时，可切换到平衡或高性能。不要长期盲目改系统服务。"
+          },
+          {
+            "name": "休眠",
+            "value": "已关闭",
+            "level": "ok",
+            "impact": "休眠文件会占用一部分 C 盘空间，但也支持休眠/快速启动能力。",
+            "suggestion": "空间极度紧张时再考虑关闭；普通用户不建议为了省一点空间乱改。"
+          },
+          {
+            "name": "快速启动",
+            "value": "已关闭",
+            "level": "ok",
+            "impact": "快速启动通常能加快开机，但偶尔会让驱动状态长期保留。",
+            "suggestion": "如果遇到设备异常，可尝试完整重启；不要随意批量修改电源策略。"
+          },
+          {
+            "name": "Windows 更新服务",
+            "value": "Running",
+            "level": "ok",
+            "impact": "更新服务异常可能导致更新卡住或长期后台重试。",
+            "suggestion": "如果更新长期失败，优先使用系统设置里的疑难解答，不建议直接删除更新目录。"
+          },
+          {
+            "name": "搜索索引",
+            "value": "未知",
+            "level": "unknown",
+            "impact": "索引服务在首次建立索引或文件很多时可能有短时占用。",
+            "suggestion": "只有长期高占用时再调整索引范围，不建议直接关闭系统搜索。"
+          },
+          {
+            "name": "OneDrive 同步",
+            "value": "未检测到运行",
+            "level": "ok",
+            "impact": "同步桌面/文档时可能占用网络、磁盘和后台资源。",
+            "suggestion": "如果桌面文件很多且同步慢，建议检查 OneDrive 同步范围。"
+          }
+        ]
+      },
+      "stability_risk": {
+        "score": 62,
+        "status": "有点累",
+        "summary": "发现 3 个稳定性/风险关注项。",
+        "evidence": [
+          "系统运行时长：83.9 小时",
+          "内存长期压力：当前占用 45.6%",
+          "可疑启动项：1 个"
+        ],
+        "risk_items": [
+          {
+            "name": "系统运行时长",
+            "status": "83.9 小时",
+            "level": "ok",
+            "suggestion": "长时间不重启时，建议先重启再判断是否仍然卡顿。"
+          },
+          {
+            "name": "内存长期压力",
+            "status": "当前占用 45.6%",
+            "level": "ok",
+            "suggestion": "长期超过 85% 时，优先减少后台或考虑升级内存。"
+          },
+          {
+            "name": "可疑启动项",
+            "status": "1 个",
+            "level": "warning",
+            "suggestion": "路径为空或位于 Temp 的启动项需要确认来源，先禁用观察，不要直接删除。"
+          },
+          {
+            "name": "硬盘健康",
+            "status": "未检测",
+            "level": "unknown",
+            "suggestion": "当前轻量版暂未读取 SMART，后续建议增加硬盘健康与温度检测。"
+          },
+          {
+            "name": "近 7 天系统错误",
+            "status": "20 条",
+            "level": "warning",
+            "suggestion": "错误较多时建议查看事件查看器，优先排查驱动、磁盘和更新相关错误。"
+          }
+        ]
+      }
+    },
+    "current_emotion": {
+      "score": 94,
+      "status": "很健康",
+      "emoji": "assets/ip/90-100.png",
+      "message": "电脑状态很好，继续保持。 当前最需要关注：常用软件。"
+    },
+    "overview_questions": [
+      {
+        "key": "space",
+        "title": "空间",
+        "score": 82,
+        "status": "良好",
+        "summary": "C 盘空间基本够用，但缓存和用户目录建议整理。",
+        "evidence": [
+          "C盘剩余 618.5GB",
+          "安全/需确认可清理约 1.6GB",
+          "桌面/下载/文档约 113.2GB"
+        ],
+        "button": "查看空间",
+        "page_index": 1
+      },
+      {
+        "key": "hardware",
+        "title": "硬件",
+        "score": 88,
+        "status": "良好",
+        "summary": "16 线程 CPU、39.9GB 内存，日常使用基本够用。",
+        "evidence": [
+          "CPU：AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD，16 线程",
+          "内存：39.9GB，当前占用 45.7%",
+          "显卡：NVIDIA GeForce RTX 3060"
+        ],
+        "button": "查看硬件",
+        "page_index": 2
+      },
+      {
+        "key": "common_software",
+        "title": "常用软件",
+        "score": 25,
+        "status": "需要尽快处理",
+        "summary": "识别到常用软件：Codex、微信、Ugreen nas、百度网盘、Alirender。",
+        "evidence": [
+          "高频/可能常用软件 12 个",
+          "需关注适配的软件 9 个",
+          "当前内存占用 45.7%"
+        ],
+        "button": "查看软件",
+        "page_index": 3
+      },
+      {
+        "key": "system_background",
+        "title": "后台自启",
+        "score": 56,
+        "status": "需要整理",
+        "summary": "检测到 14 个启动项，建议关闭 4 个非必要项。",
+        "evidence": [
+          "运行进程 50 个",
+          "高占用进程 0 个",
+          "可疑启动项 4 个"
+        ],
+        "button": "查看后台",
+        "page_index": 4
+      },
+      {
+        "key": "windows_settings",
+        "title": "Windows 设置",
+        "score": 81,
+        "status": "良好",
+        "summary": "发现 1 个 Windows 设置建议关注。",
+        "evidence": [
+          "电源模式：Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+          "休眠：已关闭",
+          "快速启动：已关闭"
+        ],
+        "button": "查看设置",
+        "page_index": 5
+      },
+      {
+        "key": "stability_risk",
+        "title": "稳定风险",
+        "score": 62,
+        "status": "有点累",
+        "summary": "发现 3 个稳定性/风险关注项。",
+        "evidence": [
+          "系统运行时长：83.9 小时",
+          "内存长期压力：当前占用 45.6%",
+          "可疑启动项：1 个"
+        ],
+        "button": "查看风险",
+        "page_index": 6
+      }
+    ],
+    "top3_experience_issues": [
+      {
+        "title": "非必要启动项偏多",
+        "level": "medium",
+        "why": "建议关闭 4 个非必要启动项。",
+        "impact": "开机慢、后台常驻多，都会让电脑一开始就背着负担。",
+        "action": "优先关闭聊天、网盘、更新器、游戏平台等非必要自启。",
+        "priority": 4
+      },
+      {
+        "title": "桌面/下载/文档目录较大",
+        "level": "medium",
+        "why": "这些目录约 113.2GB。",
+        "impact": "不建议自动删除，但长期混放会让 C 盘越来越乱。",
+        "action": "把安装包、压缩包、素材归档到其他盘。",
+        "priority": 6
+      },
+      {
+        "title": "建议关注：保持 C 盘至少 40GB 可用空间",
+        "level": "good",
+        "why": "系统和常用软件需要缓存空间。",
+        "impact": "空间太紧会让很多软件变慢。",
+        "action": "每周看一次 C 盘剩余空间。",
+        "priority": 90
+      }
+    ],
+    "space_sections": {
+      "safe_clean": [
+        {
+          "name": "Windows 临时文件",
+          "path": "C:\\Windows\\Temp",
+          "size_gb": 0.03,
+          "explain": "安装、解压和运行留下的临时文件，大多数可以安全清理。",
+          "button": "立即清理"
+        },
+        {
+          "name": "用户临时文件",
+          "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp",
+          "size_gb": 1.5,
+          "explain": "安装、解压和运行留下的临时文件，大多数可以安全清理。",
+          "button": "立即清理"
+        }
+      ],
+      "confirm_clean": [
+        {
+          "name": "回收站",
+          "path": "C:\\$Recycle.Bin",
+          "size_gb": 0.03,
+          "explain": "清空前需要确认里面没有还要恢复的文件。",
+          "button": "先确认"
+        }
+      ],
+      "manual_review": [
+        {
+          "name": "文档目录",
+          "path": "C:\\Users\\Administrator\\Documents",
+          "size_gb": 65.74,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        },
+        {
+          "name": "桌面",
+          "path": "C:\\Users\\Administrator\\Desktop",
+          "size_gb": 45.95,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        },
+        {
+          "name": "Adobe 缓存",
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Adobe",
+          "size_gb": 1.54,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        },
+        {
+          "name": "下载目录",
+          "path": "C:\\Users\\Administrator\\Downloads",
+          "size_gb": 1.53,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        },
+        {
+          "name": "QQ 文件",
+          "path": "C:\\Users\\Administrator\\Documents\\Tencent Files",
+          "size_gb": 0.62,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        },
+        {
+          "name": "Chrome 缓存",
+          "path": "C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache",
+          "size_gb": 0.43,
+          "explain": "建议先确认重要文件后清理",
+          "button": "打开位置"
+        }
+      ]
+    },
+    "process_summary": {
+      "total_count": 50,
+      "high_cpu_count": 0,
+      "high_memory_count": 0,
+      "background_count": 4,
+      "suggest_close_count": 8,
+      "items": [
+        {
+          "name": "pycharm64.exe",
+          "pid": 31700,
+          "cpu_percent": 0.0,
+          "memory_mb": 2005.5,
+          "path": "C:\\软件\\PyCharm 2025.3.1\\bin\\pycharm64.exe",
+          "category": "开发工具",
+          "can_close": true,
+          "explain": "pycharm64.exe 占用 2005.5MB 内存。如果正在处理大项目，这是正常的；不用时可关闭释放资源。"
+        },
+        {
+          "name": "explorer.exe",
+          "pid": 33068,
+          "cpu_percent": 0.0,
+          "memory_mb": 1643.9,
+          "path": "C:\\Windows\\explorer.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "explorer.exe 当前占用 1643.9MB 内存。"
+        },
+        {
+          "name": "Codex.exe",
+          "pid": 29128,
+          "cpu_percent": 0.0,
+          "memory_mb": 706.7,
+          "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "Codex.exe 当前占用 706.7MB 内存。"
+        },
+        {
+          "name": "Weixin.exe",
+          "pid": 20884,
+          "cpu_percent": 0.0,
+          "memory_mb": 705.9,
+          "path": "C:\\Program Files\\Tencent\\Weixin\\Weixin.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "Weixin.exe 当前占用 705.9MB 内存。"
+        },
+        {
+          "name": "SearchApp.exe",
+          "pid": 35888,
+          "cpu_percent": 0.0,
+          "memory_mb": 451.8,
+          "path": "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "SearchApp.exe 当前占用 451.8MB 内存。"
+        },
+        {
+          "name": "wegame.exe",
+          "pid": 21004,
+          "cpu_percent": 0.0,
+          "memory_mb": 447.7,
+          "path": "C:\\游戏\\WeGame\\wegame.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "wegame.exe 当前占用 447.7MB 内存。"
+        },
+        {
+          "name": "UGREEN NAS.exe",
+          "pid": 13400,
+          "cpu_percent": 0.0,
+          "memory_mb": 438.4,
+          "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "UGREEN NAS.exe 当前占用 438.4MB 内存。"
+        },
+        {
+          "name": "Codex.exe",
+          "pid": 10956,
+          "cpu_percent": 0.0,
+          "memory_mb": 383.9,
+          "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "Codex.exe 当前占用 383.9MB 内存。"
+        },
+        {
+          "name": "WeChatAppEx.exe",
+          "pid": 19680,
+          "cpu_percent": 0.0,
+          "memory_mb": 343.1,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "WeChatAppEx.exe 当前占用 343.1MB 内存。"
+        },
+        {
+          "name": "QQ.exe",
+          "pid": 15840,
+          "cpu_percent": 0.0,
+          "memory_mb": 340.2,
+          "path": "C:\\软件\\QQ\\QQ.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "QQ.exe 当前占用 340.2MB 内存。"
+        },
+        {
+          "name": "BaiduNetdiskUnite.exe",
+          "pid": 31508,
+          "cpu_percent": 0.0,
+          "memory_mb": 321.5,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe",
+          "category": "浏览器",
+          "can_close": true,
+          "explain": "BaiduNetdiskUnite.exe 属于浏览器进程，标签页越多占用越高。"
+        },
+        {
+          "name": "SodaMusic.exe",
+          "pid": 18296,
+          "cpu_percent": 0.0,
+          "memory_mb": 317.2,
+          "path": "C:\\软件\\汽水\\Soda Music\\3.1.2\\SodaMusic.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "SodaMusic.exe 当前占用 317.2MB 内存。"
+        },
+        {
+          "name": "codex.exe",
+          "pid": 30024,
+          "cpu_percent": 0.0,
+          "memory_mb": 304.1,
+          "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "codex.exe 当前占用 304.1MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 34700,
+          "cpu_percent": 0.0,
+          "memory_mb": 297.8,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 297.8MB 内存。"
+        },
+        {
+          "name": "dwm.exe",
+          "pid": 1840,
+          "cpu_percent": 0.0,
+          "memory_mb": 289.3,
+          "path": "C:\\Windows\\System32\\dwm.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "dwm.exe 当前占用 289.3MB 内存。"
+        },
+        {
+          "name": "WeChatAppEx.exe",
+          "pid": 28016,
+          "cpu_percent": 0.0,
+          "memory_mb": 280.2,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "WeChatAppEx.exe 当前占用 280.2MB 内存。"
+        },
+        {
+          "name": "UGREEN NAS.exe",
+          "pid": 39356,
+          "cpu_percent": 0.0,
+          "memory_mb": 274.6,
+          "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "UGREEN NAS.exe 当前占用 274.6MB 内存。"
+        },
+        {
+          "name": "078助手.exe",
+          "pid": 33788,
+          "cpu_percent": 0.0,
+          "memory_mb": 273.7,
+          "path": "C:\\软件\\078\\lol078\\078助手.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "078助手.exe 当前占用 273.7MB 内存。"
+        },
+        {
+          "name": "Codex.exe",
+          "pid": 31780,
+          "cpu_percent": 0.0,
+          "memory_mb": 271.3,
+          "path": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.422.9565.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "Codex.exe 当前占用 271.3MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 27640,
+          "cpu_percent": 0.0,
+          "memory_mb": 271.2,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 271.2MB 内存。"
+        },
+        {
+          "name": "SearchApp.exe",
+          "pid": 6804,
+          "cpu_percent": 0.0,
+          "memory_mb": 270.5,
+          "path": "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "SearchApp.exe 当前占用 270.5MB 内存。"
+        },
+        {
+          "name": "wetype_server.exe",
+          "pid": 4232,
+          "cpu_percent": 0.0,
+          "memory_mb": 270.4,
+          "path": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\wetype_server.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "wetype_server.exe 当前占用 270.4MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 8804,
+          "cpu_percent": 0.0,
+          "memory_mb": 266.9,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 266.9MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 40748,
+          "cpu_percent": 0.0,
+          "memory_mb": 263.9,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 263.9MB 内存。"
+        },
+        {
+          "name": "AliWorkbench.exe",
+          "pid": 31404,
+          "cpu_percent": 0.0,
+          "memory_mb": 261.6,
+          "path": "C:\\软件\\千牛\\AliWorkbench.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliWorkbench.exe 当前占用 261.6MB 内存。"
+        },
+        {
+          "name": "AliWorkbench.exe",
+          "pid": 39756,
+          "cpu_percent": 0.0,
+          "memory_mb": 261.6,
+          "path": "C:\\软件\\千牛\\AliWorkbench.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliWorkbench.exe 当前占用 261.6MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 40952,
+          "cpu_percent": 0.0,
+          "memory_mb": 256.4,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 256.4MB 内存。"
+        },
+        {
+          "name": "Creative Cloud UI Helper.exe",
+          "pid": 22388,
+          "cpu_percent": 0.0,
+          "memory_mb": 255.6,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud UI Helper.exe",
+          "category": "后台常驻",
+          "can_close": true,
+          "explain": "Creative Cloud UI Helper.exe 可能在后台同步、更新或常驻，不用时可关闭观察。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 40524,
+          "cpu_percent": 0.0,
+          "memory_mb": 251.5,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 251.5MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 11244,
+          "cpu_percent": 0.0,
+          "memory_mb": 251.4,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 251.4MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 25004,
+          "cpu_percent": 0.0,
+          "memory_mb": 242.7,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 242.7MB 内存。"
+        },
+        {
+          "name": "WeChatAppEx.exe",
+          "pid": 1244,
+          "cpu_percent": 0.0,
+          "memory_mb": 235.4,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "WeChatAppEx.exe 当前占用 235.4MB 内存。"
+        },
+        {
+          "name": "WeChatAppEx.exe",
+          "pid": 31868,
+          "cpu_percent": 0.0,
+          "memory_mb": 232.0,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Tencent\\xwechat\\XPlugin\\Plugins\\RadiumWMPF\\19481\\extracted\\runtime\\WeChatAppEx.exe",
+          "category": "聊天软件",
+          "can_close": true,
+          "explain": "WeChatAppEx.exe 当前占用 232.0MB 内存。"
+        },
+        {
+          "name": "BaiduNetdiskUnite.exe",
+          "pid": 6720,
+          "cpu_percent": 0.0,
+          "memory_mb": 229.9,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe",
+          "category": "浏览器",
+          "can_close": true,
+          "explain": "BaiduNetdiskUnite.exe 属于浏览器进程，标签页越多占用越高。"
+        },
+        {
+          "name": "Creative Cloud.exe",
+          "pid": 22568,
+          "cpu_percent": 0.0,
+          "memory_mb": 229.8,
+          "path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud\\ACC\\Creative Cloud.exe",
+          "category": "后台常驻",
+          "can_close": true,
+          "explain": "Creative Cloud.exe 可能在后台同步、更新或常驻，不用时可关闭观察。"
+        },
+        {
+          "name": "UGREEN NAS.exe",
+          "pid": 36416,
+          "cpu_percent": 0.0,
+          "memory_mb": 222.8,
+          "path": "C:\\软件\\NAS\\UGREEN NAS\\UGREEN NAS.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "UGREEN NAS.exe 当前占用 222.8MB 内存。"
+        },
+        {
+          "name": "powershell.exe",
+          "pid": 40348,
+          "cpu_percent": 0.0,
+          "memory_mb": 219.7,
+          "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "powershell.exe 当前占用 219.7MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 17984,
+          "cpu_percent": 0.0,
+          "memory_mb": 218.7,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 218.7MB 内存。"
+        },
+        {
+          "name": "ShellExperienceHost.exe",
+          "pid": 30588,
+          "cpu_percent": 0.0,
+          "memory_mb": 216.3,
+          "path": "C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe",
+          "category": "系统/驱动",
+          "can_close": false,
+          "explain": "ShellExperienceHost.exe 当前占用 216.3MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 40504,
+          "cpu_percent": 0.0,
+          "memory_mb": 215.7,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 215.7MB 内存。"
+        },
+        {
+          "name": "Adobe Desktop Service.exe",
+          "pid": 22856,
+          "cpu_percent": 0.0,
+          "memory_mb": 214.8,
+          "path": "C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\ADS\\Adobe Desktop Service.exe",
+          "category": "后台常驻",
+          "can_close": true,
+          "explain": "Adobe Desktop Service.exe 可能在后台同步、更新或常驻，不用时可关闭观察。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 29868,
+          "cpu_percent": 0.0,
+          "memory_mb": 214.3,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 214.3MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 37008,
+          "cpu_percent": 0.0,
+          "memory_mb": 214.3,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 214.3MB 内存。"
+        },
+        {
+          "name": "078助手.exe",
+          "pid": 43524,
+          "cpu_percent": 0.0,
+          "memory_mb": 214.2,
+          "path": "C:\\软件\\078\\lol078\\078助手.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "078助手.exe 当前占用 214.2MB 内存。"
+        },
+        {
+          "name": "BaiduNetdiskUnite.exe",
+          "pid": 35624,
+          "cpu_percent": 0.0,
+          "memory_mb": 211.1,
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\module\\BrowserEngine\\BaiduNetdiskUnite.exe",
+          "category": "浏览器",
+          "can_close": true,
+          "explain": "BaiduNetdiskUnite.exe 属于浏览器进程，标签页越多占用越高。"
+        },
+        {
+          "name": "wetype_update.exe",
+          "pid": 8704,
+          "cpu_percent": 0.0,
+          "memory_mb": 208.3,
+          "path": "C:\\Program Files\\Tencent\\WeType\\1.4.3.9\\wetype_update.exe",
+          "category": "后台常驻",
+          "can_close": true,
+          "explain": "wetype_update.exe 可能在后台同步、更新或常驻，不用时可关闭观察。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 16836,
+          "cpu_percent": 0.0,
+          "memory_mb": 203.3,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 203.3MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 19772,
+          "cpu_percent": 0.0,
+          "memory_mb": 201.6,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 201.6MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 44672,
+          "cpu_percent": 0.0,
+          "memory_mb": 201.0,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 201.0MB 内存。"
+        },
+        {
+          "name": "AliRender.exe",
+          "pid": 11304,
+          "cpu_percent": 0.0,
+          "memory_mb": 200.8,
+          "path": "C:\\软件\\千牛\\9.97.00N\\AliRender.exe",
+          "category": "正在使用",
+          "can_close": true,
+          "explain": "AliRender.exe 当前占用 200.8MB 内存。"
+        }
+      ]
+    },
+    "startup_summary": {
+      "total_count": 14,
+      "keep_count": 1,
+      "disable_count": 4,
+      "suspicious_count": 4,
+      "unknown_count": 5,
+      "items": [
+        {
+          "name": "sdstj",
+          "path": "",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "stat",
+          "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "360huabao",
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "BaiduYunDetect",
+          "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "QQNT",
+          "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "聊天软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "BaiduYunGuanjia",
+          "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Weixin",
+          "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "聊天软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "CCXProcess",
+          "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "汽水音乐",
+          "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "EPLTarget\\P0000000000000000",
+          "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议保留",
+          "type": "普通软件",
+          "impact": "可能与驱动、安全或系统体验有关，建议保留。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Spotify",
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "普通软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "com.lbyczf.clashwin",
+          "path": "C:\\Users\\Administrator\\Desktop\\不常用\\Clash\\Clash for Windows.exe",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+          "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+          "source": "HKLM Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "AdobeGCInvoker-1.0",
+          "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+          "source": "HKLM Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "设计软件组件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        }
+      ]
+    },
+    "hardware_bottlenecks": [
+      {
+        "name": "CPU",
+        "status": "够用",
+        "impact": "影响软件响应、多任务和开发编译。",
+        "suggestion": "只有长期 CPU 满载时才优先考虑升级。"
+      },
+      {
+        "name": "内存",
+        "status": "够用",
+        "impact": "影响多开浏览器、设计、剪辑和开发工具。",
+        "suggestion": "经常多开大软件时，优先考虑升级到 32GB 或更高。"
+      },
+      {
+        "name": "硬盘空间",
+        "status": "够用",
+        "impact": "影响系统缓存、安装更新和软件暂存。",
+        "suggestion": "建议 C 盘长期保留 40GB，设计/剪辑用户尽量 100GB 以上。"
+      },
+      {
+        "name": "显卡",
+        "status": "已检测",
+        "impact": "NVIDIA GeForce RTX 3060",
+        "suggestion": "重度 3D、AI 生图、视频特效需要结合显存判断。"
+      }
+    ],
+    "software_fit": [
+      {
+        "name": "Codex",
+        "category": "系统/驱动",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "Codex.exe 正在运行",
+          "codex.exe 正在运行",
+          "历史扫描出现 13 次"
+        ]
+      },
+      {
+        "name": "微信",
+        "category": "聊天社交",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 100,
+        "status": "流畅",
+        "level": "good",
+        "summary": "微信 跑起来比较稳。",
+        "hardware_match": {
+          "memory": "够用",
+          "cpu": "够用",
+          "disk": "够用",
+          "gpu": "不关键"
+        },
+        "bottleneck": "暂未发现明显硬件短板。",
+        "suggestion": "正常使用即可，定期扫描观察后台和空间。",
+        "evidence": [
+          "Weixin.exe 正在运行",
+          "WeChatAppEx.exe 正在运行",
+          "开机自启动",
+          "历史扫描出现 4 次"
+        ]
+      },
+      {
+        "name": "Ugreen nas",
+        "category": "正在使用",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "UGREEN NAS.exe 正在运行",
+          "历史扫描出现 9 次"
+        ]
+      },
+      {
+        "name": "百度网盘",
+        "category": "浏览器",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "BaiduNetdiskUnite.exe 正在运行",
+          "开机自启动",
+          "历史扫描出现 9 次"
+        ]
+      },
+      {
+        "name": "Alirender",
+        "category": "正在使用",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "AliRender.exe 正在运行",
+          "历史扫描出现 40 次"
+        ]
+      },
+      {
+        "name": "Aliworkbench",
+        "category": "正在使用",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "AliWorkbench.exe 正在运行",
+          "历史扫描出现 10 次"
+        ]
+      },
+      {
+        "name": "CorelDRAW",
+        "category": "普通软件",
+        "usage_score": 100,
+        "common_score": 100,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "已安装"
+        ]
+      },
+      {
+        "name": "Searchapp",
+        "category": "系统/驱动",
+        "usage_score": 98,
+        "common_score": 98,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "SearchApp.exe 正在运行",
+          "历史扫描出现 6 次"
+        ]
+      },
+      {
+        "name": "078助手",
+        "category": "正在使用",
+        "usage_score": 98,
+        "common_score": 98,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "078助手.exe 正在运行",
+          "历史扫描出现 6 次"
+        ]
+      },
+      {
+        "name": "QQ",
+        "category": "聊天软件",
+        "usage_score": 93,
+        "common_score": 93,
+        "fit_score": 70,
+        "status": "需要观察",
+        "level": "medium",
+        "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+        "hardware_match": {
+          "cpu": "未知",
+          "memory": "未知",
+          "disk": "未知",
+          "gpu": "未知"
+        },
+        "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+        "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+        "evidence": [
+          "QQ.exe 正在运行",
+          "已安装",
+          "开机自启动",
+          "历史扫描出现 3 次"
+        ]
+      }
+    ],
+    "user_software_profile": [
+      {
+        "name": "Codex",
+        "category": "系统/驱动",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "Codex.exe 正在运行",
+          "codex.exe 正在运行",
+          "历史扫描出现 13 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 706.7,
+        "usage_score": 100
+      },
+      {
+        "name": "微信",
+        "category": "聊天软件",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "开机自启动",
+          "正在运行"
+        ],
+        "evidence": [
+          "Weixin.exe 正在运行",
+          "WeChatAppEx.exe 正在运行",
+          "开机自启动",
+          "历史扫描出现 4 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 705.9,
+        "usage_score": 100
+      },
+      {
+        "name": "Ugreen nas",
+        "category": "正在使用",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "UGREEN NAS.exe 正在运行",
+          "历史扫描出现 9 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 438.4,
+        "usage_score": 100
+      },
+      {
+        "name": "百度网盘",
+        "category": "浏览器",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "开机自启动",
+          "正在运行"
+        ],
+        "evidence": [
+          "BaiduNetdiskUnite.exe 正在运行",
+          "开机自启动",
+          "历史扫描出现 9 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 322.0,
+        "usage_score": 100
+      },
+      {
+        "name": "Alirender",
+        "category": "正在使用",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "AliRender.exe 正在运行",
+          "历史扫描出现 40 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 297.8,
+        "usage_score": 100
+      },
+      {
+        "name": "Aliworkbench",
+        "category": "正在使用",
+        "common_score": 100,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "AliWorkbench.exe 正在运行",
+          "历史扫描出现 10 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 356.0,
+        "usage_score": 100
+      },
+      {
+        "name": "CorelDRAW",
+        "category": "普通软件",
+        "common_score": 100,
+        "sources": [
+          "已安装"
+        ],
+        "evidence": [
+          "已安装"
+        ],
+        "last_seen": "",
+        "publisher": " Corel Corporation",
+        "max_memory_mb": 0,
+        "usage_score": 100
+      },
+      {
+        "name": "Searchapp",
+        "category": "系统/驱动",
+        "common_score": 98,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "SearchApp.exe 正在运行",
+          "历史扫描出现 6 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 451.8,
+        "usage_score": 98
+      },
+      {
+        "name": "078助手",
+        "category": "正在使用",
+        "common_score": 98,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "078助手.exe 正在运行",
+          "历史扫描出现 6 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 273.7,
+        "usage_score": 98
+      },
+      {
+        "name": "QQ",
+        "category": "聊天软件",
+        "common_score": 93,
+        "sources": [
+          "历史扫描",
+          "已安装",
+          "开机自启动",
+          "正在运行"
+        ],
+        "evidence": [
+          "QQ.exe 正在运行",
+          "已安装",
+          "开机自启动",
+          "历史扫描出现 3 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "腾讯科技（深圳）有限公司",
+        "max_memory_mb": 340.2,
+        "usage_score": 93
+      },
+      {
+        "name": "PyCharm",
+        "category": "开发工具",
+        "common_score": 68,
+        "sources": [
+          "历史扫描",
+          "已安装",
+          "正在运行"
+        ],
+        "evidence": [
+          "pycharm64.exe 正在运行",
+          "已安装",
+          "历史扫描出现 4 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "JetBrains s.r.o.",
+        "max_memory_mb": 2017.1,
+        "usage_score": 68
+      },
+      {
+        "name": "Explorer",
+        "category": "系统/驱动",
+        "common_score": 55,
+        "sources": [
+          "历史扫描",
+          "正在运行"
+        ],
+        "evidence": [
+          "explorer.exe 正在运行",
+          "历史扫描出现 4 次"
+        ],
+        "last_seen": "2026-05-09 05:32:29",
+        "publisher": "",
+        "max_memory_mb": 1657.5,
+        "usage_score": 55
+      }
+    ],
+    "system_bloat": {
+      "startup_total": 14,
+      "startup_disable_count": 4,
+      "startup_suspicious_count": 4,
+      "background_count": 4,
+      "bloat_like_processes": [],
+      "message": "可疑项只代表来源不够明确，建议先禁用观察，不要直接删除文件。"
+    },
+    "optimization_tasks": [
+      {
+        "title": "清理Windows 临时文件",
+        "type": "safe_clean",
+        "risk": "低",
+        "group": "立即处理",
+        "expected_gain": "释放约 0.03GB 空间",
+        "button_text": "立即清理",
+        "auto_supported": true
+      },
+      {
+        "title": "清理用户临时文件",
+        "type": "safe_clean",
+        "risk": "低",
+        "group": "立即处理",
+        "expected_gain": "释放约 1.5GB 空间",
+        "button_text": "立即清理",
+        "auto_supported": true
+      },
+      {
+        "title": "关闭 4 个非必要启动项",
+        "type": "startup_disable",
+        "risk": "低",
+        "group": "建议处理",
+        "expected_gain": "减少开机和后台常驻占用",
+        "button_text": "优化启动项",
+        "auto_supported": true
+      },
+      {
+        "title": "整理桌面、下载和文档目录",
+        "type": "manual_review",
+        "risk": "低",
+        "group": "建议处理",
+        "expected_gain": "让系统盘更清爽，文件更容易管理",
+        "button_text": "查看大目录",
+        "auto_supported": false
+      },
+      {
+        "title": "检查可疑启动项",
+        "type": "risk_check",
+        "risk": "中",
+        "group": "谨慎处理",
+        "expected_gain": "降低异常软件自启动风险",
+        "button_text": "查看详情",
+        "auto_supported": false
+      }
+    ],
+    "plain_summary": "主要影响体验的是：非必要启动项偏多、桌面/下载/文档目录较大。建议先处理风险低、收益明显的项目。"
+  },
+  "six_dimensions": {
+    "space": {
+      "score": 82,
+      "status": "良好",
+      "summary": "C 盘空间基本够用，但缓存和用户目录建议整理。",
+      "evidence": [
+        "C盘剩余 618.5GB",
+        "安全/需确认可清理约 1.6GB",
+        "桌面/下载/文档约 113.2GB"
+      ],
+      "safe_clean": [
+        "Windows 临时文件",
+        "用户临时文件"
+      ],
+      "need_confirm": [
+        "回收站"
+      ],
+      "manual_review": [
+        "文档目录",
+        "桌面",
+        "Adobe 缓存",
+        "下载目录",
+        "QQ 文件",
+        "Chrome 缓存"
+      ]
+    },
+    "hardware": {
+      "score": 88,
+      "status": "良好",
+      "summary": "16 线程 CPU、39.9GB 内存，日常使用基本够用。",
+      "evidence": [
+        "CPU：AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD，16 线程",
+        "内存：39.9GB，当前占用 45.7%",
+        "显卡：NVIDIA GeForce RTX 3060"
+      ],
+      "gpu": [
+        {
+          "name": "NVIDIA GeForce RTX 3060",
+          "vram_gb": 12.0,
+          "driver_version": "560.94",
+          "temperature_c": 50.0,
+          "utilization_percent": 1.0,
+          "vendor": "NVIDIA",
+          "source": "nvidia-smi",
+          "status": "detected"
+        }
+      ]
+    },
+    "common_software": {
+      "score": 25,
+      "status": "需要尽快处理",
+      "summary": "识别到常用软件：Codex、微信、Ugreen nas、百度网盘、Alirender。",
+      "evidence": [
+        "高频/可能常用软件 12 个",
+        "需关注适配的软件 9 个",
+        "当前内存占用 45.7%"
+      ],
+      "items": [
+        {
+          "name": "Codex",
+          "category": "系统/驱动",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "Codex.exe 正在运行",
+            "codex.exe 正在运行",
+            "历史扫描出现 13 次"
+          ]
+        },
+        {
+          "name": "微信",
+          "category": "聊天社交",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 100,
+          "status": "流畅",
+          "level": "good",
+          "summary": "微信 跑起来比较稳。",
+          "hardware_match": {
+            "memory": "够用",
+            "cpu": "够用",
+            "disk": "够用",
+            "gpu": "不关键"
+          },
+          "bottleneck": "暂未发现明显硬件短板。",
+          "suggestion": "正常使用即可，定期扫描观察后台和空间。",
+          "evidence": [
+            "Weixin.exe 正在运行",
+            "WeChatAppEx.exe 正在运行",
+            "开机自启动",
+            "历史扫描出现 4 次"
+          ]
+        },
+        {
+          "name": "Ugreen nas",
+          "category": "正在使用",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "UGREEN NAS.exe 正在运行",
+            "历史扫描出现 9 次"
+          ]
+        },
+        {
+          "name": "百度网盘",
+          "category": "浏览器",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "BaiduNetdiskUnite.exe 正在运行",
+            "开机自启动",
+            "历史扫描出现 9 次"
+          ]
+        },
+        {
+          "name": "Alirender",
+          "category": "正在使用",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "AliRender.exe 正在运行",
+            "历史扫描出现 40 次"
+          ]
+        },
+        {
+          "name": "Aliworkbench",
+          "category": "正在使用",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "AliWorkbench.exe 正在运行",
+            "历史扫描出现 10 次"
+          ]
+        },
+        {
+          "name": "CorelDRAW",
+          "category": "普通软件",
+          "usage_score": 100,
+          "common_score": 100,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "已安装"
+          ]
+        },
+        {
+          "name": "Searchapp",
+          "category": "系统/驱动",
+          "usage_score": 98,
+          "common_score": 98,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "SearchApp.exe 正在运行",
+            "历史扫描出现 6 次"
+          ]
+        },
+        {
+          "name": "078助手",
+          "category": "正在使用",
+          "usage_score": 98,
+          "common_score": 98,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "078助手.exe 正在运行",
+            "历史扫描出现 6 次"
+          ]
+        },
+        {
+          "name": "QQ",
+          "category": "聊天软件",
+          "usage_score": 93,
+          "common_score": 93,
+          "fit_score": 70,
+          "status": "需要观察",
+          "level": "medium",
+          "summary": "已识别为常用软件，但暂时没有内置配置档案。",
+          "hardware_match": {
+            "cpu": "未知",
+            "memory": "未知",
+            "disk": "未知",
+            "gpu": "未知"
+          },
+          "bottleneck": "当前版本还无法准确判断它的硬件需求。",
+          "suggestion": "如果运行时明显卡顿，使用前先关闭不用的后台软件。",
+          "evidence": [
+            "QQ.exe 正在运行",
+            "已安装",
+            "开机自启动",
+            "历史扫描出现 3 次"
+          ]
+        }
+      ]
+    },
+    "system_background": {
+      "score": 56,
+      "status": "需要整理",
+      "running_process_count": 50,
+      "startup_count": 14,
+      "suggest_disable_count": 4,
+      "suspicious_count": 4,
+      "summary": "检测到 14 个启动项，建议关闭 4 个非必要项。",
+      "evidence": [
+        "运行进程 50 个",
+        "高占用进程 0 个",
+        "可疑启动项 4 个"
+      ],
+      "items": [
+        {
+          "name": "sdstj",
+          "path": "",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "stat",
+          "path": "C:\\Windows\\stat.exe secrect=1.0.0.4  channel=xt-zn_1-202509-1064_6-w-1",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "360huabao",
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\360huabao\\360huabao.exe /hb:5 /from:2",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "BaiduYunDetect",
+          "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\YunDetectService.exe\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "QQNT",
+          "path": "\"C:\\软件\\QQ\\QQ.exe\" /background",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "聊天软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "BaiduYunGuanjia",
+          "path": "\"C:\\Users\\Administrator\\AppData\\Roaming\\baidu\\BaiduNetdisk\\BaiduNetdisk.exe\" AutoRun",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Weixin",
+          "path": "\"C:\\Program Files\\Tencent\\Weixin\\Weixin.exe\" -autorun",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "聊天软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "CCXProcess",
+          "path": "\"C:\\Program Files (x86)\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "可疑项目",
+          "type": "普通软件",
+          "impact": "路径或名称不够明确，建议先确认来源。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "汽水音乐",
+          "path": "C:\\软件\\汽水\\Soda Music\\SodaMusicLauncher.exe --auto-startup",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "EPLTarget\\P0000000000000000",
+          "path": "C:\\Windows\\system32\\spool\\DRIVERS\\x64\\3\\E_YATISME.EXE /EPT \"EPLTarget\\P0000000000000000\" /M \"L4160 Series\"",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议保留",
+          "type": "普通软件",
+          "impact": "可能与驱动、安全或系统体验有关，建议保留。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Spotify",
+          "path": "C:\\Users\\Administrator\\AppData\\Roaming\\Spotify\\Spotify.exe --autostart --minimized",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "普通软件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "com.lbyczf.clashwin",
+          "path": "C:\\Users\\Administrator\\Desktop\\不常用\\Clash\\Clash for Windows.exe",
+          "source": "HKCU Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "Unattend0000000001{1667E9E0-8440-440C-AFE4-9480857C1005}",
+          "path": "%SystemDrive%\\Sysprep\\ES5S\\ES5S.exe /Deploy /Desktop",
+          "source": "HKLM Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "未知项目",
+          "type": "普通软件",
+          "impact": "暂时无法判断来源，建议打开位置或复制路径查询。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        },
+        {
+          "name": "AdobeGCInvoker-1.0",
+          "path": "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGCInvokerUtility.exe\"",
+          "source": "HKLM Run",
+          "status": "enabled",
+          "recommendation": "optional_disable",
+          "category": "建议关闭",
+          "type": "设计软件组件",
+          "impact": "关闭后通常不影响使用，只是不再开机自动打开。",
+          "buttons": [
+            "禁用",
+            "打开位置",
+            "复制路径"
+          ]
+        }
+      ]
+    },
+    "windows_settings": {
+      "score": 81,
+      "status": "良好",
+      "summary": "发现 1 个 Windows 设置建议关注。",
+      "evidence": [
+        "电源模式：Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+        "休眠：已关闭",
+        "快速启动：已关闭"
+      ],
+      "items": [
+        {
+          "name": "电源模式",
+          "value": "Դ GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()",
+          "level": "ok",
+          "impact": "节能模式可能限制 CPU 性能，设计、剪辑、开发时会更明显。",
+          "suggestion": "需要高性能工作时，可切换到平衡或高性能。不要长期盲目改系统服务。"
+        },
+        {
+          "name": "休眠",
+          "value": "已关闭",
+          "level": "ok",
+          "impact": "休眠文件会占用一部分 C 盘空间，但也支持休眠/快速启动能力。",
+          "suggestion": "空间极度紧张时再考虑关闭；普通用户不建议为了省一点空间乱改。"
+        },
+        {
+          "name": "快速启动",
+          "value": "已关闭",
+          "level": "ok",
+          "impact": "快速启动通常能加快开机，但偶尔会让驱动状态长期保留。",
+          "suggestion": "如果遇到设备异常，可尝试完整重启；不要随意批量修改电源策略。"
+        },
+        {
+          "name": "Windows 更新服务",
+          "value": "Running",
+          "level": "ok",
+          "impact": "更新服务异常可能导致更新卡住或长期后台重试。",
+          "suggestion": "如果更新长期失败，优先使用系统设置里的疑难解答，不建议直接删除更新目录。"
+        },
+        {
+          "name": "搜索索引",
+          "value": "未知",
+          "level": "unknown",
+          "impact": "索引服务在首次建立索引或文件很多时可能有短时占用。",
+          "suggestion": "只有长期高占用时再调整索引范围，不建议直接关闭系统搜索。"
+        },
+        {
+          "name": "OneDrive 同步",
+          "value": "未检测到运行",
+          "level": "ok",
+          "impact": "同步桌面/文档时可能占用网络、磁盘和后台资源。",
+          "suggestion": "如果桌面文件很多且同步慢，建议检查 OneDrive 同步范围。"
+        }
+      ]
+    },
+    "stability_risk": {
+      "score": 62,
+      "status": "有点累",
+      "summary": "发现 3 个稳定性/风险关注项。",
+      "evidence": [
+        "系统运行时长：83.9 小时",
+        "内存长期压力：当前占用 45.6%",
+        "可疑启动项：1 个"
+      ],
+      "risk_items": [
+        {
+          "name": "系统运行时长",
+          "status": "83.9 小时",
+          "level": "ok",
+          "suggestion": "长时间不重启时，建议先重启再判断是否仍然卡顿。"
+        },
+        {
+          "name": "内存长期压力",
+          "status": "当前占用 45.6%",
+          "level": "ok",
+          "suggestion": "长期超过 85% 时，优先减少后台或考虑升级内存。"
+        },
+        {
+          "name": "可疑启动项",
+          "status": "1 个",
+          "level": "warning",
+          "suggestion": "路径为空或位于 Temp 的启动项需要确认来源，先禁用观察，不要直接删除。"
+        },
+        {
+          "name": "硬盘健康",
+          "status": "未检测",
+          "level": "unknown",
+          "suggestion": "当前轻量版暂未读取 SMART，后续建议增加硬盘健康与温度检测。"
+        },
+        {
+          "name": "近 7 天系统错误",
+          "status": "20 条",
+          "level": "warning",
+          "suggestion": "错误较多时建议查看事件查看器，优先排查驱动、磁盘和更新相关错误。"
+        }
+      ]
+    }
+  },
+  "current_emotion": {
+    "score": 94,
+    "status": "很健康",
+    "emoji": "assets/ip/90-100.png",
+    "message": "电脑状态很好，继续保持。 当前最需要关注：常用软件。"
+  },
+  "top3_experience_issues": [
+    {
+      "title": "非必要启动项偏多",
+      "level": "medium",
+      "why": "建议关闭 4 个非必要启动项。",
+      "impact": "开机慢、后台常驻多，都会让电脑一开始就背着负担。",
+      "action": "优先关闭聊天、网盘、更新器、游戏平台等非必要自启。",
+      "priority": 4
+    },
+    {
+      "title": "桌面/下载/文档目录较大",
+      "level": "medium",
+      "why": "这些目录约 113.2GB。",
+      "impact": "不建议自动删除，但长期混放会让 C 盘越来越乱。",
+      "action": "把安装包、压缩包、素材归档到其他盘。",
+      "priority": 6
+    },
+    {
+      "title": "建议关注：保持 C 盘至少 40GB 可用空间",
+      "level": "good",
+      "why": "系统和常用软件需要缓存空间。",
+      "impact": "空间太紧会让很多软件变慢。",
+      "action": "每周看一次 C 盘剩余空间。",
+      "priority": 90
+    }
+  ]
+}
